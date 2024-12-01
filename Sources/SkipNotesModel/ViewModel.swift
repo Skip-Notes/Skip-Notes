@@ -10,7 +10,7 @@ fileprivate let logger: Logger = Logger(subsystem: "SkipNotesModel", category: "
 @Observable public class ViewModel {
     public static let shared = try! ViewModel()
 
-    private static let dbPath = URL.applicationSupportDirectory.appendingPathComponent("items3.sqlite")
+    private static let dbPath = URL.applicationSupportDirectory.appendingPathComponent("notes.sqlite")
 
     private let db: Connection
 
