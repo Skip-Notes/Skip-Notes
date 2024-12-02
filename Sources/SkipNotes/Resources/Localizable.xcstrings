@@ -69,6 +69,9 @@
     "Date" : {
 
     },
+    "Done" : {
+
+    },
     "Favorite" : {
 
     },
@@ -159,6 +162,7 @@
       }
     },
     "Name" : {
+      "extractionState" : "stale",
       "localizations" : {
         "es" : {
           "stringUnit" : {
@@ -280,6 +284,7 @@
 
     },
     "Welcome" : {
+      "extractionState" : "stale",
       "localizations" : {
         "es" : {
           "stringUnit" : {
@@ -306,9 +311,6 @@
           }
         }
       }
-    },
-    "Welcome to Skip Notes!" : {
-
     }
   },
   "version" : "1.0"

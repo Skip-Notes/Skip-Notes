@@ -8,13 +8,12 @@ fileprivate let logger: Logger = Logger(subsystem: "SkipNotesModel", category: "
 
 /// The Observable ViewModel used by the application.
 @Observable public class ViewModel {
-    public static let shared = try! ViewModel()
+    public static let shared = try! ViewModel(dbPath: URL.applicationSupportDirectory.appendingPathComponent("notesdb.sqlite"))
 
-    private static let dbPath = URL.applicationSupportDirectory.appendingPathComponent("notesdb.sqlite")
     private static let orderOffset = 100.0
     private let db: Connection
 
-    // the current notes filter
+    // the current notes filter, which will be bound to a search field in the user interface
     public var filter = "" {
         didSet {
             do {
@@ -28,11 +27,11 @@ fileprivate let logger: Logger = Logger(subsystem: "SkipNotesModel", category: "
     public private(set) var items: [Item] = []
     public var errorMessage: String? = nil
 
-    private init() throws {
+    init(dbPath: URL) throws {
         // make sure the application support folder exists
-        logger.info("connecting to database: \(Self.dbPath.path)")
-        try FileManager.default.createDirectory(at: Self.dbPath.deletingLastPathComponent(), withIntermediateDirectories: true)
-        self.db = try Connection(Self.dbPath.path)
+        logger.info("connecting to database: \(dbPath.path)")
+        try FileManager.default.createDirectory(at: dbPath.deletingLastPathComponent(), withIntermediateDirectories: true)
+        self.db = try Connection(dbPath.path)
         self.db.trace { logger.info("SQL: \($0)") }
         try initializeSchema()
         try reloadRows()
@@ -107,7 +106,6 @@ fileprivate let logger: Logger = Logger(subsystem: "SkipNotesModel", category: "
         reloading {
             self.filter = "" // clear any search filters on insert
             var item = Item()
-            item.title = "New Note"
             // set the order to be the max plus 1.0
             item.order = (items.map(\.order).max() ?? 0.0) + Self.orderOffset
             try db.run(Item.table.insert(item))
@@ -187,8 +185,9 @@ public struct Item : Identifiable, Hashable, Codable {
         self.notes = notes
     }
 
+    /// Fall back to "New Note" when the item title is empty
     public var itemTitle: String {
-        !title.isEmpty ? title : dateString
+        !title.isEmpty ? title : "New Note"
     }
 
     public var dateString: String {
