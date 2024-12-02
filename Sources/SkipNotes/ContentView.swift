@@ -38,7 +38,12 @@ public struct ContentView: View {
                     .navigationTitle(item.itemTitle)
             }
             .toolbar {
-                ToolbarItemGroup(placement: .bottomBar) {
+                #if os(macOS)
+                let placement: ToolbarItemPlacement = .automatic
+                #else
+                let placement: ToolbarItemPlacement = .bottomBar // unavailable on macOS
+                #endif
+                ToolbarItemGroup(placement: placement) {
                     Button {
                         withAnimation {
                             viewModel.addItem()

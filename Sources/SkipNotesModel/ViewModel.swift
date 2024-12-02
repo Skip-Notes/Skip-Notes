@@ -32,7 +32,9 @@ fileprivate let logger: Logger = Logger(subsystem: "SkipNotesModel", category: "
         logger.info("connecting to database: \(dbPath.path)")
         try FileManager.default.createDirectory(at: dbPath.deletingLastPathComponent(), withIntermediateDirectories: true)
         self.db = try Connection(dbPath.path)
+        #if DEBUG
         self.db.trace { logger.info("SQL: \($0)") }
+        #endif
         try initializeSchema()
         try reloadRows()
     }
@@ -87,7 +89,7 @@ fileprivate let logger: Logger = Logger(subsystem: "SkipNotesModel", category: "
             let like = "%" + filter.lowercased() + "%"
             query = query.filter(Item.titleColumn.lowercaseString.like(like) || Item.notesColumn.lowercaseString.like(like))
         }
-        query = query.order(Item.favoriteColumn.desc, Item.orderColumn.desc, Item.dateColumn.desc)
+        query = query.order(Item.orderColumn.desc, Item.dateColumn.desc)
         self.items = try db.prepare(query).map({ try $0.decode() })
     }
 
