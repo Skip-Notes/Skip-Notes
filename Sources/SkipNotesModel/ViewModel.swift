@@ -10,11 +10,21 @@ fileprivate let logger: Logger = Logger(subsystem: "SkipNotesModel", category: "
 @Observable public class ViewModel {
     public static let shared = try! ViewModel()
 
-    private static let dbPath = URL.applicationSupportDirectory.appendingPathComponent("notes.sqlite")
-
+    private static let dbPath = URL.applicationSupportDirectory.appendingPathComponent("notesdb.sqlite")
+    private static let orderOffset = 100.0
     private let db: Connection
 
-    public var name = "Skipper"
+    // the current notes filter
+    public var filter = "" {
+        didSet {
+            do {
+                try reloadRows()
+            } catch {
+                logger.error("error reloading rows: \(error.localizedDescription)")
+            }
+        }
+    }
+
     public private(set) var items: [Item] = []
     public var errorMessage: String? = nil
 
@@ -24,25 +34,65 @@ fileprivate let logger: Logger = Logger(subsystem: "SkipNotesModel", category: "
         try FileManager.default.createDirectory(at: Self.dbPath.deletingLastPathComponent(), withIntermediateDirectories: true)
         self.db = try Connection(Self.dbPath.path)
         self.db.trace { logger.info("SQL: \($0)") }
-
-        // TODO: check whether table exists first
-        _ = try? db.run(Item.table.create { builder in
-            builder.column(Item.idColumn, primaryKey: true)
-            builder.column(Item.dateColumn)
-            builder.column(Item.favoriteColumn)
-            builder.column(Item.orderColumn)
-            builder.column(Item.titleColumn)
-            builder.column(Item.notesColumn)
-        })
-
+        try initializeSchema()
         try reloadRows()
+    }
+
+    private func initializeSchema() throws {
+        if db.userVersion == 0 {
+            // create the database for the initial schema version
+            try db.run(Item.table.create { builder in
+                builder.column(Item.idColumn, primaryKey: true)
+                builder.column(Item.dateColumn)
+                builder.column(Item.favoriteColumn)
+                builder.column(Item.orderColumn)
+                builder.column(Item.titleColumn)
+                builder.column(Item.notesColumn)
+            })
+            db.userVersion = 1
+        }
+
+        // schema migrations update the userVersion each time they change the DB
+        if db.userVersion == 1 {
+            try db.run(Item.table.createIndex(Item.dateColumn, unique: false))
+            try db.run(Item.table.createIndex(Item.favoriteColumn, unique: false))
+            try db.run(Item.table.createIndex(Item.orderColumn, unique: false))
+            db.userVersion = 2
+        }
+
+        // create full-text search index
+        if db.userVersion == 2 {
+            try db.run(Item.table.createIndex(Item.titleColumn, unique: false))
+            try db.run(Item.table.createIndex(Item.notesColumn, unique: false))
+
+            // alternatively, we could create a FTS index, but we would need to also create a trigger to keep the seach table updated
+            /*
+            let config = FTS5Config()
+                .column(Item.titleColumn)
+                .column(Item.notesColumn)
+
+            // CREATE VIRTUAL TABLE "contents" USING fts5("title", "notes")
+            try db.run(Item.contentsSearchTable.create(.FTS5(config)))
+            */
+
+            db.userVersion = 3
+        }
+
     }
 
     /// Loads all the rows from the database
     func reloadRows() throws {
-        self.items = try db.prepare(Item.table.order(Item.orderColumn.desc, Item.dateColumn.desc)).map({ try $0.decode() })
+        var query: SchemaType = Item.table
+        if !filter.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
+            // this could be where we use the FTS index for efficient search rather than brute-force LIKE
+            let like = "%" + filter.lowercased() + "%"
+            query = query.filter(Item.titleColumn.lowercaseString.like(like) || Item.notesColumn.lowercaseString.like(like))
+        }
+        query = query.order(Item.favoriteColumn.desc, Item.orderColumn.desc, Item.dateColumn.desc)
+        self.items = try db.prepare(query).map({ try $0.decode() })
     }
 
+    /// Perform the given operation and reload all the rows afterwards
     func reloading(_ f: () throws -> ()) {
         defer { try? reloadRows() }
         do {
@@ -55,9 +105,11 @@ fileprivate let logger: Logger = Logger(subsystem: "SkipNotesModel", category: "
 
     public func addItem() {
         reloading {
+            self.filter = "" // clear any search filters on insert
             var item = Item()
+            item.title = "New Note"
             // set the order to be the max plus 1.0
-            item.order = (items.map(\.order).max() ?? 0.0) + 1.0
+            item.order = (items.map(\.order).max() ?? 0.0) + Self.orderOffset
             try db.run(Item.table.insert(item))
         }
     }
@@ -72,17 +124,17 @@ fileprivate let logger: Logger = Logger(subsystem: "SkipNotesModel", category: "
 
     public func move(fromOffsets source: Array<Int>, toOffset destination: Int) {
         reloading {
-            // update the "order" column to be halfway between the two adjacent item, or max+1.0 for moving to the first row
-            let dorder = destination == 0 ? (items[destination].order + 1.0)
-            : destination == items.count ? (items[destination - 1].order - 1.0)
-            : (items[destination].order + ((items[destination - 1].order - items[destination].order) / 2.0))
+            // update the "order" column to be halfway between the two adjacent item, or max+100.0 for moving to the first row
+            let dorder = destination == 0 ? (items[destination].order + Self.orderOffset)
+                : destination == items.count ? (items[destination - 1].order - Self.orderOffset)
+                : (items[destination].order + ((items[destination - 1].order - items[destination].order) / 2.0))
             let sourceItems = source.map({
                 var item = items[$0]
                 item.order = dorder
                 return item
             })
             for sourceItem in sourceItems {
-                try db.run(Item.table.upsert(sourceItem, onConflictOf: Item.idColumn))
+                try db.run(Item.table.filter(Item.idColumn == sourceItem.id).update(sourceItem))
             }
         }
     }
@@ -95,6 +147,7 @@ fileprivate let logger: Logger = Logger(subsystem: "SkipNotesModel", category: "
 
     public func save(item: Item) {
         reloading {
+            // perform an upsert because we don't know if this is a new item or an existing one
             try db.run(Item.table.upsert(item, onConflictOf: Item.idColumn))
         }
     }
@@ -121,6 +174,9 @@ public struct Item : Identifiable, Hashable, Codable {
 
     public var notes: String
     static let notesColumn = SQLExpression<String>("notes")
+
+    // Full-text search index for title & notes
+    //static let contentsSearchTable = VirtualTable("contents")
 
     public init(id: UUID = UUID(), date: Date = .now, order: Double = 0.0, favorite: Bool = false, title: String = "", notes: String = "") {
         self.id = id

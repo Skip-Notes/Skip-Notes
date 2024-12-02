@@ -2,7 +2,7 @@ import SwiftUI
 import SkipNotesModel
 
 public enum ContentTab: String, Hashable {
-    case welcome, home, settings
+    case welcome, notes, settings
 }
 
 public struct ContentView: View {
@@ -17,7 +17,7 @@ public struct ContentView: View {
     public var body: some View {
         TabView(selection: $tab) {
             VStack(spacing: 0) {
-                Text("Hello [\(viewModel.name)](https://skip.tools)!")
+                Text("Welcome to Skip Notes!")
                     .padding()
                 Image(systemName: "heart.fill")
                     .foregroundStyle(.red)
@@ -50,7 +50,8 @@ public struct ContentView: View {
                         viewModel.move(fromOffsets: Array(fromOffsets), toOffset: toOffset)
                     }
                 }
-                .navigationTitle(Text("\(viewModel.items.count) Items"))
+                .searchable(text: $viewModel.filter)
+                .navigationTitle(Text("\(viewModel.items.count) Notes"))
                 .navigationDestination(for: Item.self) { item in
                     ItemView(item: item, viewModel: $viewModel)
                         .navigationTitle(item.itemTitle)
@@ -67,12 +68,11 @@ public struct ContentView: View {
                     }
                 }
             }
-            .tabItem { Label("Home", systemImage: "house.fill") }
-            .tag(ContentTab.home)
+            .tabItem { Label("Notes", systemImage: "list.bullet") }
+            .tag(ContentTab.notes)
 
             NavigationStack {
                 Form {
-                    TextField("Name", text: $viewModel.name)
                     Picker("Appearance", selection: $appearance) {
                         Text("System").tag("")
                         Text("Light").tag("light")

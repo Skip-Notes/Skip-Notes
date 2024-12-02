@@ -1,7 +1,7 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
-    "%lld Items" : {
+    "%lld Notes" : {
 
     },
     "Add" : {
@@ -73,6 +73,7 @@
 
     },
     "Hello [%@](https://skip.tools)!" : {
+      "extractionState" : "stale",
       "localizations" : {
         "es" : {
           "stringUnit" : {
@@ -101,6 +102,7 @@
       }
     },
     "Home" : {
+      "extractionState" : "stale",
       "localizations" : {
         "es" : {
           "stringUnit" : {
@@ -304,6 +306,9 @@
           }
         }
       }
+    },
+    "Welcome to Skip Notes!" : {
+
     }
   },
   "version" : "1.0"
