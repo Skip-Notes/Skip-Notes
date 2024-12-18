@@ -39,6 +39,11 @@ fileprivate let logger: Logger = Logger(subsystem: "SkipNotesModel", category: "
         try reloadRows()
     }
 
+    /// Public constructor for bridging testing
+    public static func create(withURL url: URL) throws -> ViewModel {
+        try ViewModel(dbPath: url)
+    }
+
     private func initializeSchema() throws {
         if db.userVersion == 0 {
             // create the database for the initial schema version
@@ -94,24 +99,26 @@ fileprivate let logger: Logger = Logger(subsystem: "SkipNotesModel", category: "
     }
 
     /// Perform the given operation and reload all the rows afterwards
-    func reloading(_ f: () throws -> ()) {
+    @discardableResult func reloading<T>(_ f: () throws -> T) -> Swift.Result<T, Error> {
         defer { try? reloadRows() }
         do {
-            try f()
+            return try .success(f())
         } catch {
             logger.error("error performing operation: \(error)")
             self.errorMessage = error.localizedDescription
+            return .failure(error)
         }
     }
 
-    public func addItem() {
-        reloading {
+    @discardableResult public func addItem() -> Item? {
+        try? reloading {
             self.filter = "" // clear any search filters on insert
             var item = Item()
             // set the order to be the max plus 1.0
             item.order = (items.map(\.order).max() ?? 0.0) + Self.orderOffset
             try db.run(Item.table.insert(item))
-        }
+            return item
+        }.get()
     }
 
     public func remove(atOffsets offsets: Array<Int>) {

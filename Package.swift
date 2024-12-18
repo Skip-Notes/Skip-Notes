@@ -35,7 +35,7 @@ let package = Package(
             .product(name: "SkipFoundation", package: "skip-foundation"),
             .product(name: "SkipFuse", package: "skip-fuse"),
             .product(name: "SkipKeychain", package: "skip-keychain"),
-            .product(name: "SQLiteDB", package: "swift-sqlite")
+            .product(name: "SQLiteDB", package: "swift-sqlite"),
         ], resources: [.process("Resources")], plugins: [.plugin(name: "skipstone", package: "skip")]),
         .testTarget(name: "SkipNotesModelTests", dependencies: [
             "SkipNotesModel",
