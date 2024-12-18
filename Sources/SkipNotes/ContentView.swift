@@ -46,7 +46,7 @@ public struct ContentView: View {
                 ToolbarItemGroup(placement: placement) {
                     Button {
                         withAnimation {
-                            viewModel.addItem()
+                            let _ = viewModel.addItem()
                         }
                     } label: {
                         Label("Add", systemImage: "plus")

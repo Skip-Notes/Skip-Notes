@@ -131,7 +131,7 @@ fileprivate let logger: Logger = Logger(subsystem: "SkipNotesModel", category: "
 
     public func move(fromOffsets source: Array<Int>, toOffset destination: Int) {
         reloading {
-            // update the "order" column to be halfway between the two adjacent item, or max+100.0 for moving to the first row
+            // update the "order" column to be halfway between the two adjacent items, or max+100.0 for moving to the first row
             let dorder = destination == 0 ? (items[destination].order + Self.orderOffset)
                 : destination == items.count ? (items[destination - 1].order - Self.orderOffset)
                 : (items[destination].order + ((items[destination - 1].order - items[destination].order) / 2.0))
