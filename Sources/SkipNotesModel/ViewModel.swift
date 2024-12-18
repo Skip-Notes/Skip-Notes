@@ -11,7 +11,8 @@ fileprivate let logger: Logger = Logger(subsystem: "SkipNotesModel", category: "
     public static let shared = try! ViewModel(dbPath: URL.applicationSupportDirectory.appendingPathComponent("notesdb.sqlite"))
 
     private static let orderOffset = 100.0
-    private let db: Connection
+    private let dbPath: URL
+    private var db: Connection
 
     // the current notes filter, which will be bound to a search field in the user interface
     public var filter = "" {
@@ -30,13 +31,19 @@ fileprivate let logger: Logger = Logger(subsystem: "SkipNotesModel", category: "
     init(dbPath: URL) throws {
         // make sure the application support folder exists
         logger.info("connecting to database: \(dbPath.path)")
+        self.dbPath = dbPath
         try FileManager.default.createDirectory(at: dbPath.deletingLastPathComponent(), withIntermediateDirectories: true)
-        self.db = try Connection(dbPath.path)
-        #if DEBUG
-        self.db.trace { logger.info("SQL: \($0)") }
-        #endif
+        self.db = try Self.connect(url: dbPath)
         try initializeSchema()
         try reloadRows()
+    }
+
+    private static func connect(url: URL) throws -> Connection {
+        let db = try Connection(url.path)
+        #if DEBUG
+        db.trace { logger.info("SQL: \($0)") }
+        #endif
+        return db
     }
 
     /// Public constructor for bridging testing
@@ -87,7 +94,7 @@ fileprivate let logger: Logger = Logger(subsystem: "SkipNotesModel", category: "
     }
 
     /// Loads all the rows from the database
-    func reloadRows() throws {
+    public func reloadRows() throws {
         var query: SchemaType = Item.table
         if !filter.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
             // this could be where we use the FTS index for efficient search rather than brute-force LIKE
@@ -156,6 +163,32 @@ fileprivate let logger: Logger = Logger(subsystem: "SkipNotesModel", category: "
         reloading {
             // perform an upsert because we don't know if this is a new item or an existing one
             try db.run(Item.table.upsert(item, onConflictOf: Item.idColumn))
+        }
+    }
+
+    public func rekey(_ key: String?) throws {
+        logger.info("\(key == nil ? "decrypting" : "encrypting") database")
+        try convertKey(key)
+    }
+
+    /// Convert between an encrypted and unencryped database by attaching to a new database and exporting with `cipher_export`
+    ///
+    /// TODO: we don't need to export and rename the database if we are changing from one key to another
+    private func convertKey(_ key: String?) throws {
+        let tmpDBURL = dbPath.appendingPathExtension("rekey")
+
+        // create a new temporary location to encrypt the database
+        try db.sqlcipher_export(Connection.Location.uri(tmpDBURL.path, parameters: []), key: key ?? "")
+
+        db = try Connection() // disconnect the current DB so we can safely overwrite it
+
+        // move the encrypted database to the new path
+        try FileManager.default.removeItem(at: dbPath)
+        try FileManager.default.moveItem(at: tmpDBURL, to: dbPath)
+
+        db = try Self.connect(url: dbPath) // reconnect to the newly converted database
+        if let key = key {
+            try db.key(key)
         }
     }
 }

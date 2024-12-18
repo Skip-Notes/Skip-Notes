@@ -16,12 +16,16 @@ final class SkipNotesModelTests: XCTestCase {
 
     func testSkipNotesModel() throws {
         logger.log("running testSkipNotesModel")
-        let vm = try ViewModel.create(withURL: URL.temporaryDirectory.appendingPathComponent(UUID().uuidString).appendingPathExtension("sqlite"))
+        let notesContent = "This is an example of a note"
+
+        let dbPath = URL.temporaryDirectory.appendingPathComponent(UUID().uuidString).appendingPathExtension("sqlite")
+        let vm = try ViewModel.create(withURL: dbPath)
         XCTAssertEqual(0, vm.items.count)
 
         var item1 = try XCTUnwrap(vm.addItem())
         XCTAssertEqual("", vm.items.first?.title)
         item1.title = "ABC"
+        item1.notes = notesContent
         vm.save(item: item1)
         XCTAssertEqual(1, vm.items.count)
         XCTAssertEqual("ABC", vm.items.first?.title)
@@ -50,6 +54,30 @@ final class SkipNotesModelTests: XCTestCase {
 
         vm.move(fromOffsets: [2], toOffset: 0)
         XCTAssertEqual(["QRS", "XYZ", "ABC"], vm.items.map(\.title))
+
+
+        let notesData = notesContent.data(using: .utf8)!
+
+        XCTAssertTrue(try Data(contentsOf: dbPath).contains(notesData), "decrypted database should contain notesContent")
+
+        let key = UUID().uuidString
+        try vm.rekey(key) // encrypt the database
+
+        XCTAssertFalse(try Data(contentsOf: dbPath).contains(notesData), "encrypted database should not contain notesContent")
+
+        try vm.reloadRows()
+        XCTAssertEqual(3, vm.items.count)
+
+        let key2 = UUID().uuidString
+        try vm.rekey(key2) // re-encrypt the database
+        XCTAssertEqual(3, vm.items.count)
+
+        try vm.rekey(nil) // decrypt the database
+
+        XCTAssertTrue(try Data(contentsOf: dbPath).contains(notesData), "decrypted database should contain notesContent")
+
+        try vm.reloadRows()
+        XCTAssertEqual(3, vm.items.count)
 
         vm.remove(atOffsets: Array(0..<vm.items.count))
         XCTAssertEqual(0, vm.items.count)
