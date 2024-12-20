@@ -13,6 +13,33 @@ fileprivate let logger: Logger = Logger(subsystem: "SkipNotesModel", category: "
     private static let orderOffset = 100.0
     private let dbPath: URL
     private var db: Connection
+    /// The database encryption key
+    private var dbkey: String? = nil
+    private static let dbkeyProp = "dbkey"
+
+    /// Whether or not this database is encrypted; setting it to true will encrypt the database with a new random key, which will be stored in the Keychain
+    public var encrypted: Bool {
+        get {
+            self.dbkey != nil
+        }
+
+        set {
+            do {
+                if newValue {
+                    let newKey = UUID().uuidString
+                    try Keychain.shared.set(newKey, forKey: Self.dbkeyProp)
+                    try self.rekey(newKey)
+                    self.dbkey = newKey
+                } else {
+                    try Keychain.shared.removeValue(forKey: Self.dbkeyProp)
+                    try self.rekey(nil)
+                    self.dbkey = nil
+                }
+            } catch {
+                logger.error("error setting encryption: \(error)")
+            }
+        }
+    }
 
     // the current notes filter, which will be bound to a search field in the user interface
     public var filter = "" {
@@ -33,10 +60,18 @@ fileprivate let logger: Logger = Logger(subsystem: "SkipNotesModel", category: "
         logger.info("connecting to database: \(dbPath.path)")
         self.dbPath = dbPath
         try FileManager.default.createDirectory(at: dbPath.deletingLastPathComponent(), withIntermediateDirectories: true)
+        self.dbkey = try Keychain.shared.string(forKey: Self.dbkeyProp)
         self.db = try Self.connect(url: dbPath)
+
+        if let key = self.dbkey {
+            logger.info("dbkey: \(key)")
+            try db.key(key)
+        }
+
         try initializeSchema()
         try reloadRows()
     }
+
 
     private static func connect(url: URL) throws -> Connection {
         let db = try Connection(url.path)
@@ -47,11 +82,13 @@ fileprivate let logger: Logger = Logger(subsystem: "SkipNotesModel", category: "
     }
 
     /// Public constructor for bridging testing
-    public static func create(withURL url: URL) throws -> ViewModel {
+    public static func create(withURL url: URL, key: String? = nil) throws -> ViewModel {
         try ViewModel(dbPath: url)
     }
 
     private func initializeSchema() throws {
+        logger.info("db.userVersion: \(self.db.userVersion ?? -1)")
+
         if db.userVersion == 0 {
             // create the database for the initial schema version
             try db.run(Item.table.create { builder in
@@ -166,6 +203,7 @@ fileprivate let logger: Logger = Logger(subsystem: "SkipNotesModel", category: "
         }
     }
 
+    /// Set the encryption key of the database, or clear it if nil
     public func rekey(_ key: String?) throws {
         logger.info("\(key == nil ? "decrypting" : "encrypting") database")
         try convertKey(key)
@@ -175,12 +213,13 @@ fileprivate let logger: Logger = Logger(subsystem: "SkipNotesModel", category: "
     ///
     /// TODO: we don't need to export and rename the database if we are changing from one key to another
     private func convertKey(_ key: String?) throws {
+        let v = db.userVersion
         let tmpDBURL = dbPath.appendingPathExtension("rekey")
 
         // create a new temporary location to encrypt the database
         try db.sqlcipher_export(Connection.Location.uri(tmpDBURL.path, parameters: []), key: key ?? "")
 
-        db = try Connection() // disconnect the current DB so we can safely overwrite it
+        db = try Connection() // disconnect (via deinit) the current DB so we can safely overwrite it
 
         // move the encrypted database to the new path
         try FileManager.default.removeItem(at: dbPath)
@@ -190,6 +229,9 @@ fileprivate let logger: Logger = Logger(subsystem: "SkipNotesModel", category: "
         if let key = key {
             try db.key(key)
         }
+
+        // re-set the userVersion, which is not copied by pragma sqlcipher_export
+        db.userVersion = v
     }
 }
 

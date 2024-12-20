@@ -1,5 +1,9 @@
 import SwiftUI
+import Foundation
+import OSLog
 import SkipNotesModel
+
+fileprivate let logger: Logger = Logger(subsystem: "skip.app.notes", category: "SkipNotes")
 
 public struct ContentView: View {
     @State var viewModel = ViewModel.shared
@@ -60,7 +64,7 @@ public struct ContentView: View {
                 }
             }
             .sheet(isPresented: $showSettings, content: {
-                SettingsView(appearance: $appearance)
+                SettingsView(appearance: $appearance, viewModel: $viewModel)
             })
         }
         .preferredColorScheme(appearance == "dark" ? .dark : appearance == "light" ? .light : nil)
@@ -69,6 +73,7 @@ public struct ContentView: View {
 
 struct SettingsView : View {
     @Binding var appearance: String
+    @Binding var viewModel: ViewModel
     @Environment(\.dismiss) var dismiss
 
     var body: some View {
@@ -79,6 +84,7 @@ struct SettingsView : View {
                     Text("Light").tag("light")
                     Text("Dark").tag("dark")
                 }
+                Toggle("Encrypt", isOn: $viewModel.encrypted)
                 HStack {
                     #if SKIP
                     ComposeView { ctx in // Mix in Compose code!
