@@ -60,7 +60,12 @@ fileprivate let logger: Logger = Logger(subsystem: "SkipNotesModel", category: "
         logger.info("connecting to database: \(dbPath.path)")
         self.dbPath = dbPath
         try FileManager.default.createDirectory(at: dbPath.deletingLastPathComponent(), withIntermediateDirectories: true)
-        self.dbkey = try Keychain.shared.string(forKey: Self.dbkeyProp)
+        do {
+            self.dbkey = try Keychain.shared.string(forKey: Self.dbkeyProp)
+        } catch {
+            // if the keychain cannot be loaded (e.g., we are running in Robolectric) then just log an error
+            logger.error("error loading keychain: \(error)")
+        }
         self.db = try Self.connect(url: dbPath)
 
         if let key = self.dbkey {
