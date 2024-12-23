@@ -19,8 +19,7 @@ let package = Package(
         .package(url: "https://source.skip.tools/skip-ui.git", from: "1.0.0"),
         .package(url: "https://source.skip.tools/skip-foundation.git", from: "1.0.0"),
         .package(url: "https://source.skip.tools/skip-fuse.git", "0.0.0"..<"2.0.0"),
-        //.package(url: "https://source.skip.tools/skip-keychain.git", "0.0.0"..<"2.0.0"),
-        .package(url: "https://source.skip.tools/skip-keychain.git", branch: "enablebridging"),
+        .package(url: "https://source.skip.tools/skip-keychain.git", "0.0.0"..<"2.0.0"),
         .package(url: "https://source.skip.tools/swift-sqlite.git", from: "1.0.0"),
     ],
     targets: [
