@@ -17,6 +17,9 @@ fileprivate let logger: Logger = Logger(subsystem: "SkipNotesModel", category: "
     private var dbkey: String? = nil
     private static let dbkeyProp = "dbkey"
 
+    /// Whether the database is currently being encrypted to decrypted
+    public var crypting: Bool = false
+
     /// Whether or not this database is encrypted; setting it to true will encrypt the database with a new random key, which will be stored in the Keychain
     public var encrypted: Bool {
         get {
@@ -24,19 +27,18 @@ fileprivate let logger: Logger = Logger(subsystem: "SkipNotesModel", category: "
         }
 
         set {
-            do {
-                if newValue {
-                    let newKey = UUID().uuidString
-                    try Keychain.shared.set(newKey, forKey: Self.dbkeyProp)
-                    try self.rekey(newKey)
-                    self.dbkey = newKey
-                } else {
-                    try Keychain.shared.removeValue(forKey: Self.dbkeyProp)
-                    try self.rekey(nil)
-                    self.dbkey = nil
+            self.crypting = true
+            Task.detached {
+                var newKey: String?
+                do {
+                    newKey = try self.cryptDatabase(encrypt: newValue)
+                } catch {
+                    logger.error("error setting encryption: \(error)")
                 }
-            } catch {
-                logger.error("error setting encryption: \(error)")
+                Task { //@MainActor in
+                    self.dbkey = newKey
+                    self.crypting = false
+                }
             }
         }
     }
@@ -84,6 +86,19 @@ fileprivate let logger: Logger = Logger(subsystem: "SkipNotesModel", category: "
         db.trace { logger.info("SQL: \($0)") }
         #endif
         return db
+    }
+
+    private func cryptDatabase(encrypt: Bool) throws -> String? {
+        if encrypt {
+            let newKey = UUID().uuidString
+            try Keychain.shared.set(newKey, forKey: Self.dbkeyProp)
+            try self.rekey(newKey)
+            return newKey
+        } else {
+            try Keychain.shared.removeValue(forKey: Self.dbkeyProp)
+            try self.rekey(nil)
+            return nil
+        }
     }
 
     /// Public constructor for bridging testing

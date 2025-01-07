@@ -71,6 +71,7 @@ public struct ContentView: View {
     }
 }
 
+
 struct SettingsView : View {
     @Binding var appearance: String
     @Binding var viewModel: ViewModel
@@ -84,16 +85,24 @@ struct SettingsView : View {
                     Text("Light").tag("light")
                     Text("Dark").tag("dark")
                 }
-                Toggle("Encrypt", isOn: $viewModel.encrypted)
-                HStack {
-                    #if SKIP
-                    ComposeView { ctx in // Mix in Compose code!
-                        androidx.compose.material3.Text("💚", modifier: ctx.modifier)
+                Toggle(isOn: $viewModel.encrypted) {
+                    HStack {
+                        Text("Encrypt")
+                        Spacer()
+                        if viewModel.crypting {
+                            ProgressView()
+                                .progressViewStyle(.circular)
+                        }
                     }
-                    #else
-                    Text(verbatim: "💙")
-                    #endif
-                    Text("Powered by Skip and \(androidSDK != nil ? "Jetpack Compose" : "SwiftUI")")
+                }
+                .disabled(viewModel.crypting)
+                HStack {
+                    if let version = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String,
+                       let buildNumber = Bundle.main.infoDictionary?["CFBundleVersion"] as? String {
+                        Text("Version \(version) (\(buildNumber))")
+                            .foregroundStyle(.gray)
+                    }
+                    Text("Powered by [Skip](https://skip.tools)")
                 }
                 .foregroundStyle(.gray)
             }

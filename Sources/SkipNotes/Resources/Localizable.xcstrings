@@ -196,7 +196,11 @@
     "Notes" : {
 
     },
+    "Powered by [Skip](https://skip.tools)" : {
+
+    },
     "Powered by Skip and %@" : {
+      "extractionState" : "stale",
       "localizations" : {
         "es" : {
           "stringUnit" : {
@@ -285,6 +289,16 @@
     },
     "Title" : {
 
+    },
+    "Version %@ (%@)" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Version %1$@ (%2$@)"
+          }
+        }
+      }
     },
     "Welcome" : {
       "extractionState" : "stale",
