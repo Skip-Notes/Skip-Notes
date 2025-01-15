@@ -35,7 +35,7 @@ fileprivate let logger: Logger = Logger(subsystem: "SkipNotesModel", category: "
                 } catch {
                     logger.error("error setting encryption: \(error)")
                 }
-                Task { //@MainActor in
+                Task { @MainActor in
                     self.dbkey = newKey
                     self.crypting = false
                 }
@@ -49,7 +49,7 @@ fileprivate let logger: Logger = Logger(subsystem: "SkipNotesModel", category: "
             do {
                 try reloadRows()
             } catch {
-                logger.error("error reloading rows: \(error.localizedDescription)")
+                logger.error("error reloading rows: \(error)")
             }
         }
     }
@@ -130,33 +130,71 @@ fileprivate let logger: Logger = Logger(subsystem: "SkipNotesModel", category: "
             db.userVersion = 2
         }
 
-        // create full-text search index
+        // create indices
         if db.userVersion == 2 {
             try db.run(Item.table.createIndex(Item.titleColumn, unique: false))
             try db.run(Item.table.createIndex(Item.notesColumn, unique: false))
-
-            // alternatively, we could create a FTS index, but we would need to also create a trigger to keep the seach table updated
-            /*
-            let config = FTS5Config()
-                .column(Item.titleColumn)
-                .column(Item.notesColumn)
-
-            // CREATE VIRTUAL TABLE "contents" USING fts5("title", "notes")
-            try db.run(Item.contentsSearchTable.create(.FTS5(config)))
-            */
-
             db.userVersion = 3
         }
 
+        // create full-text search index
+        if db.userVersion == 3 {
+            let config = FTS4Config()
+                //.contentRowId(Item.rowIdColumn) // FTS5: defaults to rowid
+                .externalContent(Item.table)
+                .column(Item.titleColumn)
+                .column(Item.notesColumn)
+                //.tokenizer(.Simple) // renamed to "ascii", not available in FTS5
+                //.tokenizer(.Porter) // porter stemming algorithm
+                //.tokenizer(.Trigram(caseSensitive: false, removeDiacritics: true)) // only works on FTS5
+                .tokenizer(.Unicode61(removeDiacritics: true))
+            try db.run(Item.FTSIndex.table.create(.FTS4(config)))
+            let tableName = Item.tableName
+            let titleName = Item.titleColumnName
+            let notesName = Item.notesColumnName
+
+            let ftsTableName = Item.FTSIndex.tableName
+            let docid = Item.FTSIndex.docidColumnName
+
+            try db.run("""
+            -- Triggers to keep the FTS index up to date.
+            CREATE TRIGGER \(tableName)_bu BEFORE UPDATE ON \(tableName) BEGIN
+              DELETE FROM \(ftsTableName) WHERE \(docid)=old.rowid;
+            END;
+            """)
+            try db.run("""
+            CREATE TRIGGER \(tableName)_bd BEFORE DELETE ON \(tableName) BEGIN
+              DELETE FROM \(ftsTableName) WHERE \(docid)=old.rowid;
+            END;
+            """)
+            try db.run("""
+            CREATE TRIGGER \(tableName)_au AFTER UPDATE ON \(tableName) BEGIN
+              INSERT INTO \(ftsTableName)(\(docid), \(titleName), \(notesName)) VALUES(new.rowid, new.\(titleName), new.\(notesName));
+            END;
+            """)
+            try db.run("""
+            CREATE TRIGGER \(tableName)_ai AFTER INSERT ON \(tableName) BEGIN
+              INSERT INTO \(ftsTableName)(\(docid), \(titleName), \(notesName)) VALUES(new.rowid, new.\(titleName), new.\(notesName));
+            END;
+            """)
+
+            db.userVersion = 4
+        }
     }
 
     /// Loads all the rows from the database
     public func reloadRows() throws {
-        var query: SchemaType = Item.table
+        var query: SchemaType = Item.table.select(Item.allColumns) // cannot just select all in case there is a join to the FTS table, which raises error reloading rows: Ambiguous column `"title"` (please disambiguate: ["\"fts_item\".\"title\"", "\"item\".\"title\""])
+
         if !filter.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
-            // this could be where we use the FTS index for efficient search rather than brute-force LIKE
-            let like = "%" + filter.lowercased() + "%"
-            query = query.filter(Item.titleColumn.lowercaseString.like(like) || Item.notesColumn.lowercaseString.like(like))
+            // brute-force LIKE
+            //let like = "%" + filter.lowercased() + "%"
+            //query = query.filter(Item.titleColumn.lowercaseString.like(like) || Item.notesColumn.lowercaseString.like(like))
+
+            // FTS table join query
+            query = query
+                .join(Item.FTSIndex.table, on: Item.table[Item.rowIdColumn] == Item.FTSIndex.table[Item.FTSIndex.docidColumn])
+                .filter(Item.FTSIndex.table.match(filter + "*")) // always add the wildcard for FTS filters
         }
         query = query.order(Item.orderColumn.desc, Item.dateColumn.desc)
         self.items = try db.prepare(query).map({ try $0.decode() })
@@ -257,25 +295,54 @@ fileprivate let logger: Logger = Logger(subsystem: "SkipNotesModel", category: "
 
 /// An individual item held by the ViewModel
 public struct Item : Identifiable, Hashable, Codable {
-    static let table = Table("item")
+    static let allColumns: [any Expressible] = [
+        table[idColumn],
+        table[dateColumn],
+        table[orderColumn],
+        table[favoriteColumn],
+        table[titleColumn],
+        table[notesColumn],
+    ]
+
+    static let tableName = "item"
+    static let table = Table(tableName)
+
+    static let rowIdColumn = SQLExpression<Int64>(rowIdColumnName)
+    static let rowIdColumnName = "rowid"
 
     public let id: UUID
-    static let idColumn = SQLExpression<UUID>("id")
+    static let idColumn = SQLExpression<UUID>(idColumnName)
+    static let idColumnName = "id"
 
     public var date: Date
-    static let dateColumn = SQLExpression<Date>("date")
+    static let dateColumn = SQLExpression<Date>(dateColumnName)
+    static let dateColumnName = "date"
 
     public var order: Double
-    static let orderColumn = SQLExpression<Double>("order")
+    static let orderColumn = SQLExpression<Double>(orderColumnName)
+    static let orderColumnName = "order"
 
     public var favorite: Bool
-    static let favoriteColumn = SQLExpression<Bool>("favorite")
+    static let favoriteColumn = SQLExpression<Bool>(favoriteColumnName)
+    static let favoriteColumnName = "favorite"
 
     public var title: String
-    static let titleColumn = SQLExpression<String>("title")
+    static let titleColumn = SQLExpression<String>(titleColumnName)
+    static let titleColumnName = "title"
 
     public var notes: String
-    static let notesColumn = SQLExpression<String>("notes")
+    static let notesColumn = SQLExpression<String>(notesColumnName)
+    static let notesColumnName = "notes"
+
+
+    /// The full-text search index table for the Item
+    struct FTSIndex {
+        static let tableName = "fts_item"
+        static let table = VirtualTable(tableName)
+
+        static let docidColumn = SQLExpression<Int64>(docidColumnName)
+        static let docidColumnName = "docid"
+    }
 
     // Full-text search index for title & notes
     //static let contentsSearchTable = VirtualTable("contents")

@@ -55,7 +55,53 @@ final class SkipNotesModelTests: XCTestCase {
         vm.move(fromOffsets: [2], toOffset: 0)
         XCTAssertEqual(["QRS", "XYZ", "ABC"], vm.items.map(\.title))
 
+        // MARK: Search
 
+        vm.filter = "DOESNOTEXIST"
+        XCTAssertEqual(0, vm.items.count)
+
+        vm.filter = "example"
+        XCTAssertEqual(1, vm.items.count, "filtered list should have matched notes content")
+
+        // update item3 to also match, ensure that the FTS index is updated and the filter works
+        item3.notes = notesContent
+        vm.save(item: item3)
+        XCTAssertEqual(2, vm.items.count)
+
+        // check for diacritics-insensitive matching
+        item3.notes = "Jérôme enjoys piñatas, crème brûlée, jalapeños, and the occasional smörgåsbord in a quaint café."
+        vm.save(item: item3)
+
+        vm.filter = "Jérôme"
+        XCTAssertEqual(1, vm.items.count)
+        vm.filter = "jérôme"
+        XCTAssertEqual(1, vm.items.count)
+        vm.filter = "jerome"
+        XCTAssertEqual(1, vm.items.count)
+
+        vm.filter = "pina"
+        XCTAssertEqual(1, vm.items.count)
+
+        vm.filter = "pinatas"
+        XCTAssertEqual(1, vm.items.count)
+        vm.filter = "jalapenos"
+        XCTAssertEqual(1, vm.items.count)
+
+        vm.filter = "brûlée"
+        XCTAssertEqual(1, vm.items.count)
+        vm.filter = "brulée"
+        XCTAssertEqual(1, vm.items.count)
+        vm.filter = "brulee"
+        XCTAssertEqual(1, vm.items.count)
+
+        item3.notes = ""
+        vm.save(item: item3)
+
+        vm.filter = ""
+        XCTAssertEqual(3, vm.items.count, "cleared filter should have reset search")
+
+
+        // MARK: encryption
         let notesData = notesContent.data(using: .utf8)!
 
         XCTAssertTrue(try Data(contentsOf: dbPath).contains(notesData), "decrypted database should contain notesContent")
@@ -78,6 +124,11 @@ final class SkipNotesModelTests: XCTestCase {
 
         try vm.reloadRows()
         XCTAssertEqual(3, vm.items.count)
+
+
+        // MARK: delete
+        vm.remove(atOffsets: [1])
+        XCTAssertEqual(2, vm.items.count)
 
         vm.remove(atOffsets: Array(0..<vm.items.count))
         XCTAssertEqual(0, vm.items.count)
