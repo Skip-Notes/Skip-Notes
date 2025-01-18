@@ -1,1 +1,1 @@
-A great new app built with Skip!
+Skip Notes lets you keep a list of secure notes on your Android device.

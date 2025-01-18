@@ -140,43 +140,16 @@ fileprivate let logger: Logger = Logger(subsystem: "SkipNotesModel", category: "
         // create full-text search index
         if db.userVersion == 3 {
             let config = FTS4Config()
-                //.contentRowId(Item.rowIdColumn) // FTS5: defaults to rowid
                 .externalContent(Item.table)
                 .column(Item.titleColumn)
                 .column(Item.notesColumn)
-                //.tokenizer(.Simple) // renamed to "ascii", not available in FTS5
-                //.tokenizer(.Porter) // porter stemming algorithm
-                //.tokenizer(.Trigram(caseSensitive: false, removeDiacritics: true)) // only works on FTS5
                 .tokenizer(.Unicode61(removeDiacritics: true))
             try db.run(Item.FTSIndex.table.create(.FTS4(config)))
-            let tableName = Item.tableName
-            let titleName = Item.titleColumnName
-            let notesName = Item.notesColumnName
 
-            let ftsTableName = Item.FTSIndex.tableName
-            let docid = Item.FTSIndex.docidColumnName
-
-            try db.run("""
-            -- Triggers to keep the FTS index up to date.
-            CREATE TRIGGER \(tableName)_bu BEFORE UPDATE ON \(tableName) BEGIN
-              DELETE FROM \(ftsTableName) WHERE \(docid)=old.rowid;
-            END;
-            """)
-            try db.run("""
-            CREATE TRIGGER \(tableName)_bd BEFORE DELETE ON \(tableName) BEGIN
-              DELETE FROM \(ftsTableName) WHERE \(docid)=old.rowid;
-            END;
-            """)
-            try db.run("""
-            CREATE TRIGGER \(tableName)_au AFTER UPDATE ON \(tableName) BEGIN
-              INSERT INTO \(ftsTableName)(\(docid), \(titleName), \(notesName)) VALUES(new.rowid, new.\(titleName), new.\(notesName));
-            END;
-            """)
-            try db.run("""
-            CREATE TRIGGER \(tableName)_ai AFTER INSERT ON \(tableName) BEGIN
-              INSERT INTO \(ftsTableName)(\(docid), \(titleName), \(notesName)) VALUES(new.rowid, new.\(titleName), new.\(notesName));
-            END;
-            """)
+            // initialize triggers needed to keep the index up to date
+            for trigger in config.createFTSTriggers(docid: Item.FTSIndex.docidColumnName, tableName: Item.tableName, ftsTableName: Item.FTSIndex.tableName, columns: Item.titleColumnName, Item.notesColumnName) {
+                try db.run(trigger)
+            }
 
             db.userVersion = 4
         }
@@ -368,4 +341,42 @@ public struct Item : Identifiable, Hashable, Codable {
     public var dateTimeString: String {
         date.formatted(date: .abbreviated, time: .shortened)
     }
+}
+
+extension FTSConfig {
+    /// Returns the SQL that creates the triggers that are needed to keep the FTS table up to date when the source table changs
+    func createFTSTriggers(rowid: String = "rowid", docid: String, tableName: String, ftsTableName: String, columns: String..., rebuild: Bool = true) -> [String] {
+        var sql: [String] = []
+
+        for event in ["UPDATE", "DELETE"] {
+            // e.g.: CREATE TRIGGER fts_item_before_update_item BEFORE UPDATE ON item BEGIN DELETE FROM fts_item WHERE docid=old.rowid
+            sql.append("""
+            CREATE TRIGGER \(ftsTableName)_before_\(event.lowercased())_\(tableName) BEFORE \(event) ON \(tableName) BEGIN
+              DELETE FROM \(ftsTableName) WHERE \(docid)=old.\(rowid);
+            END;
+            """)
+        }
+
+        let columnNames = columns.joined(separator: ", ")
+        // new columns in values need to start with the "new" prefix
+        let newColumnNames = ([rowid] + columns).map({ "new." + $0 }).joined(separator: ", ")
+
+        for event in ["UPDATE", "INSERT"] {
+            sql.append("""
+            CREATE TRIGGER \(ftsTableName)_after_\(event.lowercased())_\(tableName) AFTER \(event) ON \(tableName) BEGIN
+              INSERT INTO \(ftsTableName)(\(docid), \(columnNames)) VALUES(\(newColumnNames));
+            END;
+            """)
+        }
+
+        if rebuild {
+            // rebuild index in case this was added after some rows were created
+            sql.append("""
+            INSERT INTO \(ftsTableName)(\(ftsTableName)) VALUES('rebuild')
+            """)
+        }
+
+        return sql
+    }
+
 }

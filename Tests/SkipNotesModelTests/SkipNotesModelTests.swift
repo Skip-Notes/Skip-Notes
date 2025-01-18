@@ -94,8 +94,18 @@ final class SkipNotesModelTests: XCTestCase {
         vm.filter = "brulee"
         XCTAssertEqual(1, vm.items.count)
 
+        // mutli-word search
+
+        vm.filter = "jerome quaint"
+        XCTAssertEqual(1, vm.items.count)
+
+        vm.filter = "a"
+        XCTAssertEqual(2, vm.items.count) // also matches "ABC"
+
+
         item3.notes = ""
         vm.save(item: item3)
+        XCTAssertEqual(1, vm.items.count) // matches "ABC"
 
         vm.filter = ""
         XCTAssertEqual(3, vm.items.count, "cleared filter should have reset search")
