@@ -35,7 +35,7 @@ fileprivate let logger: Logger = Logger(subsystem: "SkipNotesModel", category: "
                 } catch {
                     logger.error("error setting encryption: \(error)")
                 }
-                Task { @MainActor in
+                Task { // @MainActor in
                     self.dbkey = newKey
                     self.crypting = false
                 }
@@ -327,11 +327,6 @@ public struct Item : Identifiable, Hashable, Codable {
         self.favorite = favorite
         self.title = title
         self.notes = notes
-    }
-
-    /// Fall back to "New Note" when the item title is empty
-    public var itemTitle: String {
-        !title.isEmpty ? title : "New Note"
     }
 
     public var dateString: String {

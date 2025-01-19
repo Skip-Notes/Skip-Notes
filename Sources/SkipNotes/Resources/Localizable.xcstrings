@@ -2,10 +2,60 @@
   "sourceLanguage" : "en",
   "strings" : {
     "%lld Notes" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld Notas"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld Notes"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld 件のノート"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld 笔记"
+          }
+        }
+      }
     },
     "Add" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Añadir"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ajouter"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "追加"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "添加"
+          }
+        }
+      }
     },
     "Appearance" : {
       "localizations" : {
@@ -36,7 +86,32 @@
       }
     },
     "Cancel" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cancelar"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Annuler"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "キャンセル"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "取消"
+          }
+        }
+      }
     },
     "Dark" : {
       "localizations" : {
@@ -67,71 +142,113 @@
       }
     },
     "Date" : {
-
-    },
-    "Done" : {
-
-    },
-    "Encrypt" : {
-
-    },
-    "Favorite" : {
-
-    },
-    "Hello [%@](https://skip.tools)!" : {
-      "extractionState" : "stale",
       "localizations" : {
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "¡Hola [%@](https://skip.tools)!"
+            "value" : "Fecha"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Bonjour [%@](https://skip.tools)!"
+            "value" : "Date"
           }
         },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "こんにちは、[%@](https://skip.tools)!"
+            "value" : "日付"
           }
         },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "你好，[%@](https://skip.tools)!"
+            "value" : "日期"
           }
         }
       }
     },
-    "Home" : {
-      "extractionState" : "stale",
+    "Done" : {
       "localizations" : {
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Inicio"
+            "value" : "Listo"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Accueil"
+            "value" : "Terminé"
           }
         },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "ホーム"
+            "value" : "完了"
           }
         },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "主页"
+            "value" : "完成"
+          }
+        }
+      }
+    },
+    "Encrypt" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cifrar"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Chiffrer"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "暗号化"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "加密"
+          }
+        }
+      }
+    },
+    "Favorite" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Favorito"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Favori"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "お気に入り"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "收藏"
           }
         }
       }
@@ -164,72 +281,117 @@
         }
       }
     },
-    "Name" : {
-      "extractionState" : "stale",
+    "New Note" : {
       "localizations" : {
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Nombre"
+            "value" : "Nueva nota"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Nom"
+            "value" : "Nouvelle note"
           }
         },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "名前"
+            "value" : "新規メモ"
           }
         },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "姓名"
+            "value" : "新建笔记"
           }
         }
       }
     },
     "Notes" : {
-
-    },
-    "Powered by [Skip](https://skip.tools)" : {
-
-    },
-    "Powered by Skip and %@" : {
-      "extractionState" : "stale",
       "localizations" : {
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Potenciado por %@"
+            "value" : "Notas"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Propulsé par %@"
+            "value" : "Notes"
           }
         },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "%@動力"
+            "value" : "ノート"
           }
         },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "由%@提供动力"
+            "value" : "笔记"
+          }
+        }
+      }
+    },
+    "Powered by [Skip](https://skip.tools)" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Desarrollado por [Skip](https://skip.tools)"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Propulsé par [Skip](https://skip.tools)"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "[Skip](https://skip.tools) 提供"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "由 [Skip](https://skip.tools) 提供"
           }
         }
       }
     },
     "Save" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Guardar"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Enregistrer"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "保存"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "保存"
+          }
+        }
+      }
     },
     "Settings" : {
       "localizations" : {
@@ -288,7 +450,32 @@
       }
     },
     "Title" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Título"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Titre"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "タイトル"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "标题"
+          }
+        }
+      }
     },
     "Version %@ (%@)" : {
       "localizations" : {
@@ -297,34 +484,29 @@
             "state" : "new",
             "value" : "Version %1$@ (%2$@)"
           }
-        }
-      }
-    },
-    "Welcome" : {
-      "extractionState" : "stale",
-      "localizations" : {
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Bienvenido"
+            "value" : "Versión %1$@ (%2$@)"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Bienvenue"
+            "value" : "Version %1$@ (%2$@)"
           }
         },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "ようこそ"
+            "value" : "バージョン  %1$@ (%2$@)"
           }
         },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "欢迎"
+            "value" : "版本 %1$@ (%2$@)"
           }
         }
       }

@@ -19,7 +19,7 @@ public struct ContentView: View {
                 ForEach(viewModel.items) { item in
                     NavigationLink(value: item) {
                         Label {
-                            Text(item.itemTitle)
+                            item.itemTitleText
                         } icon: {
                             if item.favorite {
                                 Image(systemName: "star.fill")
@@ -39,7 +39,7 @@ public struct ContentView: View {
             .navigationTitle(Text("\(viewModel.items.count) Notes"))
             .navigationDestination(for: Item.self) { item in
                 ItemView(item: item, viewModel: $viewModel)
-                    .navigationTitle(item.itemTitle)
+                    .navigationTitle(item.itemTitleText)
             }
             .toolbar {
                 #if os(macOS)
@@ -147,6 +147,17 @@ struct ItemView : View {
                 }
                 .disabled(!viewModel.isUpdated(item))
             }
+        }
+    }
+}
+
+extension Item {
+    /// Returns the title of the note, or else the localized default title "New Note"
+    var itemTitleText: Text {
+        if !self.title.isEmpty {
+            return Text(verbatim: self.title)
+        } else {
+            return Text("New Note")
         }
     }
 }
