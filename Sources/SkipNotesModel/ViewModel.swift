@@ -262,6 +262,7 @@ fileprivate let logger: Logger = Logger(subsystem: "SkipNotesModel", category: "
         }
 
         // re-set the userVersion, which is not copied by pragma sqlcipher_export
+        // “sqlcipher_export does not alter the user_version of the target database. Applications are free to do this themselves.” – https://www.zetetic.net/sqlcipher/sqlcipher-api/#notes-export
         db.userVersion = v
     }
 }
