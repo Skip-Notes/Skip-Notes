@@ -122,16 +122,28 @@ struct ItemView : View {
     @State var item: Item
     @Binding var viewModel: ViewModel
     @Environment(\.dismiss) var dismiss
+    @FocusState var focusField: FocusField?
+
+    enum FocusField { case title, notes }
 
     var body: some View {
         Form {
             TextField("Title", text: $item.title)
+                .focused($focusField, equals: .title)
                 .textFieldStyle(.roundedBorder)
             Toggle("Favorite", isOn: $item.favorite)
             DatePicker("Date", selection: $item.date)
             Text("Notes").font(.title3)
             TextEditor(text: $item.notes)
+                .focused($focusField, equals: .notes)
                 .border(Color.secondary, width: 1.0)
+        }
+        .onAppear {
+            if item.title.isEmpty && item.notes.isEmpty {
+                focusField = .title
+            } else if item.notes.isEmpty {
+                focusField = .notes
+            }
         }
         .navigationBarBackButtonHidden() // we use a "Cancel" button in place of the back button
         .toolbar {
@@ -154,8 +166,12 @@ struct ItemView : View {
 extension Item {
     /// Returns the title of the note, or else the localized default title "New Note"
     var itemTitleText: Text {
-        if !self.title.isEmpty {
+        if !self.title.isEmpty && !self.notes.isEmpty {
+            return Text(verbatim: self.title + ": " + self.notes)
+        } else if !self.title.isEmpty {
             return Text(verbatim: self.title)
+        } else if !self.notes.isEmpty {
+            return Text(verbatim: self.notes)
         } else {
             return Text("New Note")
         }
