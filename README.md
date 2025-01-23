@@ -3,6 +3,9 @@
 This is a [Skip](https://skip.tools) dual-platform app project.
 It builds a native app for both iOS and Android.
 
+
+Play Store: https://play.google.com/store/apps/details?id=org.appfair.app.SkipNotes
+
 ## Building
 
 This project is both a stand-alone Swift Package Manager module,

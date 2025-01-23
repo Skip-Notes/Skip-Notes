@@ -166,12 +166,15 @@ struct ItemView : View {
 extension Item {
     /// Returns the title of the note, or else the localized default title "New Note"
     var itemTitleText: Text {
-        if !self.title.isEmpty && !self.notes.isEmpty {
-            return Text(verbatim: self.title + ": " + self.notes)
-        } else if !self.title.isEmpty {
-            return Text(verbatim: self.title)
-        } else if !self.notes.isEmpty {
-            return Text(verbatim: self.notes)
+        let title = self.title.trimmingCharacters(in: .whitespacesAndNewlines)
+        let notes = self.notes.trimmingCharacters(in: .whitespacesAndNewlines)
+
+        if !title.isEmpty && !notes.isEmpty {
+            return Text(verbatim: title + ": " + notes)
+        } else if !title.isEmpty {
+            return Text(verbatim: title)
+        } else if !notes.isEmpty {
+            return Text(verbatim: notes)
         } else {
             return Text("New Note")
         }
