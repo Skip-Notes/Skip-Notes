@@ -2,6 +2,7 @@
   "sourceLanguage" : "en",
   "strings" : {
     "%lld Notes" : {
+      "comment" : "Navigation title indicating the number of notes in the database",
       "localizations" : {
         "es" : {
           "stringUnit" : {
@@ -30,6 +31,7 @@
       }
     },
     "Add" : {
+      "comment" : "The text for the button to add a new note",
       "localizations" : {
         "es" : {
           "stringUnit" : {
@@ -58,6 +60,7 @@
       }
     },
     "Appearance" : {
+      "comment" : "Settings form field for setting the appearance of the user interface",
       "localizations" : {
         "es" : {
           "stringUnit" : {
@@ -86,6 +89,7 @@
       }
     },
     "Cancel" : {
+      "comment" : "Button for cancelling the editing of a note",
       "localizations" : {
         "es" : {
           "stringUnit" : {
@@ -114,6 +118,7 @@
       }
     },
     "Dark" : {
+      "comment" : "Menu option to set the UI appearance to dark mode",
       "localizations" : {
         "es" : {
           "stringUnit" : {
@@ -142,6 +147,7 @@
       }
     },
     "Date" : {
+      "comment" : "Form field for setting the date of a note",
       "localizations" : {
         "es" : {
           "stringUnit" : {
@@ -170,6 +176,7 @@
       }
     },
     "Done" : {
+      "comment" : "Button text for when the note is done editing",
       "localizations" : {
         "es" : {
           "stringUnit" : {
@@ -198,6 +205,7 @@
       }
     },
     "Encrypt" : {
+      "comment" : "Settings toggle button for activating notes database encryption",
       "localizations" : {
         "es" : {
           "stringUnit" : {
@@ -226,6 +234,7 @@
       }
     },
     "Favorite" : {
+      "comment" : "Form field for toggling whether the note is a favorite or not",
       "localizations" : {
         "es" : {
           "stringUnit" : {
@@ -254,6 +263,7 @@
       }
     },
     "Light" : {
+      "comment" : "Menu option to set the UI appearance to light mode",
       "localizations" : {
         "es" : {
           "stringUnit" : {
@@ -282,6 +292,7 @@
       }
     },
     "New Note" : {
+      "comment" : "Default title for a new note that has been created but the title has not yet been specified",
       "localizations" : {
         "es" : {
           "stringUnit" : {
@@ -310,6 +321,7 @@
       }
     },
     "Notes" : {
+      "comment" : "Navigation title for the list of all the current notes",
       "localizations" : {
         "es" : {
           "stringUnit" : {
@@ -338,6 +350,7 @@
       }
     },
     "Powered by [Skip](https://skip.tools)" : {
+      "comment" : "Settings form title for the description of the technology used to build the app",
       "localizations" : {
         "es" : {
           "stringUnit" : {
@@ -366,6 +379,7 @@
       }
     },
     "Save" : {
+      "comment" : "Button for saving the contents of the note",
       "localizations" : {
         "es" : {
           "stringUnit" : {
@@ -394,6 +408,7 @@
       }
     },
     "Settings" : {
+      "comment" : "Tab item for bringing up the settings interface",
       "localizations" : {
         "es" : {
           "stringUnit" : {
@@ -422,6 +437,7 @@
       }
     },
     "System" : {
+      "comment" : "Menu option to set the UI appearance to the system default",
       "localizations" : {
         "es" : {
           "stringUnit" : {
@@ -450,6 +466,7 @@
       }
     },
     "Title" : {
+      "comment" : "Form field for setting the title of a note",
       "localizations" : {
         "es" : {
           "stringUnit" : {
@@ -478,6 +495,7 @@
       }
     },
     "Version %@ (%@)" : {
+      "comment" : "Settings title for the current version of the app",
       "localizations" : {
         "en" : {
           "stringUnit" : {
