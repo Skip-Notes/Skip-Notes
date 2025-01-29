@@ -78,7 +78,7 @@
         "it" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : "Aggiungere"
+            "value" : "Aggiungi"
           }
         },
         "ja" : {
@@ -396,7 +396,7 @@
         "it" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : "Crittografare"
+            "value" : "Crittografa"
           }
         },
         "ja" : {
@@ -502,7 +502,7 @@
         "it" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : "Leggera"
+            "value" : "Livella"
           }
         },
         "ja" : {
@@ -714,7 +714,7 @@
         "it" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : "Salvare"
+            "value" : "Salva"
           }
         },
         "ja" : {
