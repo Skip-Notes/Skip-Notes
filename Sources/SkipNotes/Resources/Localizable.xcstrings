@@ -4,45 +4,51 @@
     "%lld Notes" : {
       "comment" : "Navigation title indicating the number of notes in the database",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "%lld Notizen"
+          }
+        },
         "es" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "%lld Notas"
           }
         },
         "fr" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "%lld Notes"
+            "state" : "needs_review",
+            "value" : "%lld Note"
           }
         },
         "it" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "%lld Note"
           }
         },
         "ja" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "%lld 件のノート"
+            "state" : "needs_review",
+            "value" : "%lld ノート"
           }
         },
         "ko" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "%lld개의 노트"
+            "state" : "needs_review",
+            "value" : "노트 %lld개"
           }
         },
         "pt_BR" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "%lld Notas"
           }
         },
         "zh-Hans" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "%lld 笔记"
           }
         }
@@ -51,46 +57,52 @@
     "Add" : {
       "comment" : "The text for the button to add a new note",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Hinzufügen"
+          }
+        },
         "es" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "Añadir"
           }
         },
         "fr" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "Ajouter"
           }
         },
         "it" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Aggiungi"
+            "state" : "needs_review",
+            "value" : "Aggiungere"
           }
         },
         "ja" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "追加"
           }
         },
         "ko" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "추가하기"
+            "state" : "needs_review",
+            "value" : "추가"
           }
         },
         "pt_BR" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "Adicionar"
           }
         },
         "zh-Hans" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "添加"
+            "state" : "needs_review",
+            "value" : "新增"
           }
         }
       }
@@ -98,45 +110,51 @@
     "Appearance" : {
       "comment" : "Settings form field for setting the appearance of the user interface",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Aussehen"
+          }
+        },
         "es" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "Apariencia"
           }
         },
         "fr" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "Apparence"
           }
         },
         "it" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "Aspetto"
           }
         },
         "ja" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "外観"
+            "state" : "needs_review",
+            "value" : "アプリの見た目"
           }
         },
         "ko" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "외관"
+            "state" : "needs_review",
+            "value" : "외모"
           }
         },
         "pt_BR" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "Aparência"
           }
         },
         "zh-Hans" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "外观"
           }
         }
@@ -145,45 +163,51 @@
     "Cancel" : {
       "comment" : "Button for cancelling the editing of a note",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Abbrechen"
+          }
+        },
         "es" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "Cancelar"
           }
         },
         "fr" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "Annuler"
           }
         },
         "it" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "Annulla"
           }
         },
         "ja" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "キャンセル"
           }
         },
         "ko" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "취소"
           }
         },
         "pt_BR" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "Cancelar"
           }
         },
         "zh-Hans" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "取消"
           }
         }
@@ -192,46 +216,52 @@
     "Dark" : {
       "comment" : "Menu option to set the UI appearance to dark mode",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Dunkel"
+          }
+        },
         "es" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "Oscuro"
           }
         },
         "fr" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "Sombre"
           }
         },
         "it" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "Scuro"
           }
         },
         "ja" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "ダーク"
+            "state" : "needs_review",
+            "value" : "%0%"
           }
         },
         "ko" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "다크"
+            "state" : "needs_review",
+            "value" : "어두운 모드"
           }
         },
         "pt_BR" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "Escuro"
           }
         },
         "zh-Hans" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "暗"
+            "state" : "needs_review",
+            "value" : "暗色"
           }
         }
       }
@@ -239,45 +269,51 @@
     "Date" : {
       "comment" : "Form field for setting the date of a note",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Datum"
+          }
+        },
         "es" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "Fecha"
           }
         },
         "fr" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "Date"
           }
         },
         "it" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "Data"
           }
         },
         "ja" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "日付"
           }
         },
         "ko" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "날짜"
           }
         },
         "pt_BR" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "Data"
           }
         },
         "zh-Hans" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "日期"
           }
         }
@@ -286,45 +322,51 @@
     "Done" : {
       "comment" : "Button text for when the note is done editing",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Erledigt"
+          }
+        },
         "es" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Listo"
+            "state" : "needs_review",
+            "value" : "Realizado"
           }
         },
         "fr" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Terminé"
+            "state" : "needs_review",
+            "value" : "Done"
           }
         },
         "it" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "Fatto"
           }
         },
         "ja" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "完了"
+            "state" : "needs_review",
+            "value" : "完成"
           }
         },
         "ko" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "완료"
           }
         },
         "pt_BR" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Feito"
+            "state" : "needs_review",
+            "value" : "Concluído"
           }
         },
         "zh-Hans" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "完成"
           }
         }
@@ -333,45 +375,51 @@
     "Encrypt" : {
       "comment" : "Settings toggle button for activating notes database encryption",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Verschlüsseln"
+          }
+        },
         "es" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "Cifrar"
           }
         },
         "fr" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "Chiffrer"
           }
         },
         "it" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "Crittografare"
           }
         },
         "ja" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "暗号化"
           }
         },
         "ko" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "암호화"
+            "state" : "needs_review",
+            "value" : "암호화하다"
           }
         },
         "pt_BR" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "Criptografar"
           }
         },
         "zh-Hans" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "加密"
           }
         }
@@ -380,46 +428,52 @@
     "Favorite" : {
       "comment" : "Form field for toggling whether the note is a favorite or not",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Favorit"
+          }
+        },
         "es" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "Favorito"
           }
         },
         "fr" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Favori"
+            "state" : "needs_review",
+            "value" : "favori"
           }
         },
         "it" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "Preferito"
           }
         },
         "ja" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "お気に入り"
           }
         },
         "ko" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "즐겨찾기"
           }
         },
         "pt_BR" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "Favorito"
           }
         },
         "zh-Hans" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "收藏"
+            "state" : "needs_review",
+            "value" : "我最喜欢的"
           }
         }
       }
@@ -427,46 +481,52 @@
     "Light" : {
       "comment" : "Menu option to set the UI appearance to light mode",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Licht"
+          }
+        },
         "es" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Claro"
+            "state" : "needs_review",
+            "value" : "Luces"
           }
         },
         "fr" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "Clair"
           }
         },
         "it" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Semplice"
+            "state" : "needs_review",
+            "value" : "Leggera"
           }
         },
         "ja" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "ライト"
           }
         },
         "ko" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "라이트"
+            "state" : "needs_review",
+            "value" : "빛"
           }
         },
         "pt_BR" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Claro"
+            "state" : "needs_review",
+            "value" : "Leve"
           }
         },
         "zh-Hans" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "光"
+            "state" : "needs_review",
+            "value" : "光的"
           }
         }
       }
@@ -474,46 +534,52 @@
     "New Note" : {
       "comment" : "Default title for a new note that has been created but the title has not yet been specified",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Neue Notiz"
+          }
+        },
         "es" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Nueva nota"
+            "state" : "needs_review",
+            "value" : "Nota nueva"
           }
         },
         "fr" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Nouvelle note"
+            "state" : "needs_review",
+            "value" : "Note neuve"
           }
         },
         "it" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "Nuova Nota"
           }
         },
         "ja" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "新規メモ"
           }
         },
         "ko" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "새로운 노트"
+            "state" : "needs_review",
+            "value" : "새 노트"
           }
         },
         "pt_BR" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "Nova Nota"
           }
         },
         "zh-Hans" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "新建笔记"
+            "state" : "needs_review",
+            "value" : "新备忘录"
           }
         }
       }
@@ -521,45 +587,51 @@
     "Notes" : {
       "comment" : "Navigation title for the list of all the current notes",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Notizen"
+          }
+        },
         "es" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Notas"
+            "state" : "needs_review",
+            "value" : "Anotaciones"
           }
         },
         "fr" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Notes"
+            "state" : "needs_review",
+            "value" : "Billets"
           }
         },
         "it" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "Note"
           }
         },
         "ja" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "ノート"
           }
         },
         "ko" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "노트"
           }
         },
         "pt_BR" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Notas"
+            "state" : "needs_review",
+            "value" : "Anotações"
           }
         },
         "zh-Hans" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "笔记"
           }
         }
@@ -568,46 +640,52 @@
     "Powered by [Skip](https://skip.tools)" : {
       "comment" : "Settings form title for the description of the technology used to build the app",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Unterstützt von [Skip](https://skip.tools)"
+          }
+        },
         "es" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Desarrollado por [Skip](https://skip.tools)"
+            "state" : "needs_review",
+            "value" : "Agradecimientos a [Skip](https://skip.tools)"
           }
         },
         "fr" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Propulsé par [Skip](https://skip.tools)"
+            "state" : "needs_review",
+            "value" : "Alimenté par [Skip](https://skip.tools)"
           }
         },
         "it" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Sviluppato con [Skip](https://skip.tools)"
+            "state" : "needs_review",
+            "value" : "Alimentato da [Skip](https://skip.tools)"
           }
         },
         "ja" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "[Skip](https://skip.tools) 提供"
+            "state" : "needs_review",
+            "value" : "翻訳を手伝ってくれる人がいます [Skip](https://skip.tools)"
           }
         },
         "ko" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "[스킵](https://skip.tools)으로 구동"
+            "state" : "needs_review",
+            "value" : "에 의해 전력을 [Skip](https://skip.tools)"
           }
         },
         "pt_BR" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Desenvolvido com [Skip](https://skip.ools)"
+            "state" : "needs_review",
+            "value" : "Powered by [Skip](https://skip.tools)"
           }
         },
         "zh-Hans" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "由 [Skip](https://skip.tools) 提供"
+            "state" : "needs_review",
+            "value" : "由 Skip 提供支持"
           }
         }
       }
@@ -615,45 +693,51 @@
     "Save" : {
       "comment" : "Button for saving the contents of the note",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Speichern"
+          }
+        },
         "es" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "Guardar"
           }
         },
         "fr" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "Enregistrer"
           }
         },
         "it" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Salva"
+            "state" : "needs_review",
+            "value" : "Salvare"
           }
         },
         "ja" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "保存"
           }
         },
         "ko" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "저장"
           }
         },
         "pt_BR" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "Salvar"
           }
         },
         "zh-Hans" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "保存"
           }
         }
@@ -662,45 +746,51 @@
     "Settings" : {
       "comment" : "Tab item for bringing up the settings interface",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Einstellungen"
+          }
+        },
         "es" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Configuración"
+            "state" : "needs_review",
+            "value" : "Ajustes"
           }
         },
         "fr" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "Paramètres"
           }
         },
         "it" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "Impostazioni"
           }
         },
         "ja" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "設定"
+            "state" : "needs_review",
+            "value" : "環境設定"
           }
         },
         "ko" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "설정"
           }
         },
         "pt_BR" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "Configurações"
           }
         },
         "zh-Hans" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "设置"
           }
         }
@@ -709,45 +799,51 @@
     "System" : {
       "comment" : "Menu option to set the UI appearance to the system default",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "System"
+          }
+        },
         "es" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "Sistema"
           }
         },
         "fr" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "Système"
           }
         },
         "it" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "Sistema"
           }
         },
         "ja" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "システム"
           }
         },
         "ko" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "시스템"
           }
         },
         "pt_BR" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "Sistema"
           }
         },
         "zh-Hans" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "系统"
           }
         }
@@ -756,45 +852,51 @@
     "Title" : {
       "comment" : "Form field for setting the title of a note",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Titel"
+          }
+        },
         "es" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "Título"
           }
         },
         "fr" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "Titre"
           }
         },
         "it" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "Titolo"
           }
         },
         "ja" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "タイトル"
           }
         },
         "ko" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "제목"
           }
         },
         "pt_BR" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "Título"
           }
         },
         "zh-Hans" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "标题"
           }
         }
@@ -803,6 +905,12 @@
     "Version %@ (%@)" : {
       "comment" : "Settings title for the current version of the app",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Version %1$@ (%2$@)"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "new",
@@ -811,44 +919,44 @@
         },
         "es" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "Versión %1$@ (%2$@)"
           }
         },
         "fr" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Version %1$@ (%2$@)"
+            "state" : "needs_review",
+            "value" : "Numéro de version %1$@ (%2$@)"
           }
         },
         "it" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "Versione %1$@ (%2$@)"
           }
         },
         "ja" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "バージョン  %1$@ (%2$@)"
+            "state" : "needs_review",
+            "value" : "バージョン％ 1 $ @（％2 $ @）"
           }
         },
         "ko" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "버전 %1$@ (%2$@)"
           }
         },
         "pt_BR" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "Versão %1$@ (%2$@)"
           }
         },
         "zh-Hans" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "版本 %1$@ (%2$@)"
+            "state" : "needs_review",
+            "value" : "版本 %1$@ （%2$@）"
           }
         }
       }
