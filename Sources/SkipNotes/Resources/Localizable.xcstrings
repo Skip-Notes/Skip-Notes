@@ -34,6 +34,12 @@
             "value" : "%lld개의 노트"
           }
         },
+        "pt_BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld Notas"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -73,6 +79,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "추가하기"
+          }
+        },
+        "pt_BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Adicionar"
           }
         },
         "zh-Hans" : {
@@ -116,6 +128,12 @@
             "value" : "외관"
           }
         },
+        "pt_BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aparência"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -155,6 +173,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "취소"
+          }
+        },
+        "pt_BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cancelar"
           }
         },
         "zh-Hans" : {
@@ -198,6 +222,12 @@
             "value" : "다크"
           }
         },
+        "pt_BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Escuro"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -237,6 +267,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "날짜"
+          }
+        },
+        "pt_BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Data"
           }
         },
         "zh-Hans" : {
@@ -280,6 +316,12 @@
             "value" : "완료"
           }
         },
+        "pt_BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Feito"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -319,6 +361,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "암호화"
+          }
+        },
+        "pt_BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Criptografar"
           }
         },
         "zh-Hans" : {
@@ -362,6 +410,12 @@
             "value" : "즐겨찾기"
           }
         },
+        "pt_BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Favorito"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -401,6 +455,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "라이트"
+          }
+        },
+        "pt_BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Claro"
           }
         },
         "zh-Hans" : {
@@ -444,6 +504,12 @@
             "value" : "새로운 노트"
           }
         },
+        "pt_BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nova Nota"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -483,6 +549,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "노트"
+          }
+        },
+        "pt_BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Notas"
           }
         },
         "zh-Hans" : {
@@ -526,6 +598,12 @@
             "value" : "[스킵](https://skip.tools)으로 구동"
           }
         },
+        "pt_BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Desenvolvido com [Skip](https://skip.ools)"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -565,6 +643,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "저장"
+          }
+        },
+        "pt_BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Salvar"
           }
         },
         "zh-Hans" : {
@@ -608,6 +692,12 @@
             "value" : "설정"
           }
         },
+        "pt_BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Configurações"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -649,6 +739,12 @@
             "value" : "시스템"
           }
         },
+        "pt_BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sistema"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -688,6 +784,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "제목"
+          }
+        },
+        "pt_BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Título"
           }
         },
         "zh-Hans" : {
@@ -735,6 +837,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "버전 %1$@ (%2$@)"
+          }
+        },
+        "pt_BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Versão %1$@ (%2$@)"
           }
         },
         "zh-Hans" : {
