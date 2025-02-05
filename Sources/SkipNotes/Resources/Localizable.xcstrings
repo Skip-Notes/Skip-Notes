@@ -4,10 +4,22 @@
     "%lld Notes" : {
       "comment" : "Navigation title indicating the number of notes in the database",
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "%lld الملاحظات"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "needs_review",
             "value" : "%lld Notizen"
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "%lld Σημειώσεις"
           }
         },
         "es" : {
@@ -16,10 +28,28 @@
             "value" : "%lld Notas"
           }
         },
+        "es_419" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Notas %lld"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "needs_review",
             "value" : "%lld Note"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "%lld नोट्स"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Catatan %lld"
           }
         },
         "it" : {
@@ -46,10 +76,58 @@
             "value" : "%lld Notas"
           }
         },
+        "pt_PT" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "%lld Notas"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Записей в базе данных: %lld"
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "%lld Note"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "%lld Notlar"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "%lld Записів"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "%lld ghi chú"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "needs_review",
             "value" : "%lld 笔记"
+          }
+        },
+        "zh_CN" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "%lld 笔记"
+          }
+        },
+        "zh_TW" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "%lld 筆註記"
           }
         }
       }
@@ -57,10 +135,22 @@
     "Add" : {
       "comment" : "The text for the button to add a new note",
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "أضف"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "needs_review",
             "value" : "Hinzufügen"
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "προσθέτω"
           }
         },
         "es" : {
@@ -69,10 +159,28 @@
             "value" : "Añadir"
           }
         },
+        "es_419" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Agregar"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "needs_review",
             "value" : "Ajouter"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "जोड़ें"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Tambahkan"
           }
         },
         "it" : {
@@ -99,7 +207,55 @@
             "value" : "Adicionar"
           }
         },
+        "pt_PT" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Adicionar"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Добавить"
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "เพิ่ม"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Ekle"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Додати"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Thêm"
+          }
+        },
         "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "新增"
+          }
+        },
+        "zh_CN" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "新增"
+          }
+        },
+        "zh_TW" : {
           "stringUnit" : {
             "state" : "needs_review",
             "value" : "新增"
@@ -110,13 +266,31 @@
     "Appearance" : {
       "comment" : "Settings form field for setting the appearance of the user interface",
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "ظهور"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "needs_review",
             "value" : "Aussehen"
           }
         },
+        "el" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "%Appearance"
+          }
+        },
         "es" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Apariencia"
+          }
+        },
+        "es_419" : {
           "stringUnit" : {
             "state" : "needs_review",
             "value" : "Apariencia"
@@ -126,6 +300,18 @@
           "stringUnit" : {
             "state" : "needs_review",
             "value" : "Apparence"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "सामग्री"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Penampilan"
           }
         },
         "it" : {
@@ -152,10 +338,58 @@
             "value" : "Aparência"
           }
         },
+        "pt_PT" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Aparência"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Вид"
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Appearance"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Görünüm"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Зовнішній вигляд"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Appearance"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "needs_review",
             "value" : "外观"
+          }
+        },
+        "zh_CN" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "外观"
+          }
+        },
+        "zh_TW" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "外觀"
           }
         }
       }
@@ -163,13 +397,31 @@
     "Cancel" : {
       "comment" : "Button for cancelling the editing of a note",
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "إلغاء"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "needs_review",
             "value" : "Abbrechen"
           }
         },
+        "el" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Ακύρωση"
+          }
+        },
         "es" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Cancelar"
+          }
+        },
+        "es_419" : {
           "stringUnit" : {
             "state" : "needs_review",
             "value" : "Cancelar"
@@ -179,6 +431,18 @@
           "stringUnit" : {
             "state" : "needs_review",
             "value" : "Annuler"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "रद्द करें"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Batal"
           }
         },
         "it" : {
@@ -205,7 +469,55 @@
             "value" : "Cancelar"
           }
         },
+        "pt_PT" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Cancelar"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Отмена"
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "เลิก"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Iptal"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Відмінити"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Hủy bỏ"
+          }
+        },
         "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "取消"
+          }
+        },
+        "zh_CN" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "取消"
+          }
+        },
+        "zh_TW" : {
           "stringUnit" : {
             "state" : "needs_review",
             "value" : "取消"
@@ -216,13 +528,31 @@
     "Dark" : {
       "comment" : "Menu option to set the UI appearance to dark mode",
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "الأمامي"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "needs_review",
             "value" : "Dunkel"
           }
         },
+        "el" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Σκοτεινό"
+          }
+        },
         "es" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Oscuro"
+          }
+        },
+        "es_419" : {
           "stringUnit" : {
             "state" : "needs_review",
             "value" : "Oscuro"
@@ -232,6 +562,18 @@
           "stringUnit" : {
             "state" : "needs_review",
             "value" : "Sombre"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "घृणा"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Gelap"
           }
         },
         "it" : {
@@ -258,10 +600,58 @@
             "value" : "Escuro"
           }
         },
+        "pt_PT" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Escuro"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Тёмный"
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "มืด"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Karanlık"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Темний"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Tối"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "needs_review",
             "value" : "暗色"
+          }
+        },
+        "zh_CN" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "黑暗"
+          }
+        },
+        "zh_TW" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "黑暗"
           }
         }
       }
@@ -269,13 +659,31 @@
     "Date" : {
       "comment" : "Form field for setting the date of a note",
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "التاريخ"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "needs_review",
             "value" : "Datum"
           }
         },
+        "el" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Ημερομηνία"
+          }
+        },
         "es" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Fecha"
+          }
+        },
+        "es_419" : {
           "stringUnit" : {
             "state" : "needs_review",
             "value" : "Fecha"
@@ -285,6 +693,18 @@
           "stringUnit" : {
             "state" : "needs_review",
             "value" : "Date"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "तारीख"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Tanggal"
           }
         },
         "it" : {
@@ -311,7 +731,55 @@
             "value" : "Data"
           }
         },
+        "pt_PT" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Data"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Дата"
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "วัน"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Tarih"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Дата"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Ngày"
+          }
+        },
         "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "日期"
+          }
+        },
+        "zh_CN" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "日期"
+          }
+        },
+        "zh_TW" : {
           "stringUnit" : {
             "state" : "needs_review",
             "value" : "日期"
@@ -322,10 +790,22 @@
     "Done" : {
       "comment" : "Button text for when the note is done editing",
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "تم"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "needs_review",
             "value" : "Erledigt"
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Είναι"
           }
         },
         "es" : {
@@ -334,10 +814,28 @@
             "value" : "Realizado"
           }
         },
+        "es_419" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Hecho"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "needs_review",
             "value" : "Done"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "समाप्त"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "<TranslatedString>"
           }
         },
         "it" : {
@@ -364,7 +862,55 @@
             "value" : "Concluído"
           }
         },
+        "pt_PT" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Concluído"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Готово"
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "เสร็จสิ้น"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Bitti"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Готово"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Hoàn tất"
+          }
+        },
         "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "完成"
+          }
+        },
+        "zh_CN" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "完成"
+          }
+        },
+        "zh_TW" : {
           "stringUnit" : {
             "state" : "needs_review",
             "value" : "完成"
@@ -375,10 +921,22 @@
     "Encrypt" : {
       "comment" : "Settings toggle button for activating notes database encryption",
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "تشفير"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "needs_review",
             "value" : "Verschlüsseln"
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Κρυπτογράφηση"
           }
         },
         "es" : {
@@ -387,10 +945,28 @@
             "value" : "Cifrar"
           }
         },
+        "es_419" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Encriptar"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "needs_review",
             "value" : "Chiffrer"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "एनक्रिप्ट करें"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Mengenkripsi"
           }
         },
         "it" : {
@@ -417,7 +993,55 @@
             "value" : "Criptografar"
           }
         },
+        "pt_PT" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Criptografar"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Шифровать"
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "เข้ารหัส"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "şifrele"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Шифрувати"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Mã hóa"
+          }
+        },
         "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "加密"
+          }
+        },
+        "zh_CN" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "加密"
+          }
+        },
+        "zh_TW" : {
           "stringUnit" : {
             "state" : "needs_review",
             "value" : "加密"
@@ -428,13 +1052,31 @@
     "Favorite" : {
       "comment" : "Form field for toggling whether the note is a favorite or not",
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "مفضل"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "needs_review",
             "value" : "Favorit"
           }
         },
+        "el" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Αγαπημένο"
+          }
+        },
         "es" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Favorito"
+          }
+        },
+        "es_419" : {
           "stringUnit" : {
             "state" : "needs_review",
             "value" : "Favorito"
@@ -444,6 +1086,18 @@
           "stringUnit" : {
             "state" : "needs_review",
             "value" : "favori"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "मान्य"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Favorit"
           }
         },
         "it" : {
@@ -470,10 +1124,58 @@
             "value" : "Favorito"
           }
         },
+        "pt_PT" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Favorito"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Избранное"
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "สัญญาณ"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Sık kullanılan"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Улюблений"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Ưa thích"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "needs_review",
             "value" : "我最喜欢的"
+          }
+        },
+        "zh_CN" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "收藏"
+          }
+        },
+        "zh_TW" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "關注"
           }
         }
       }
@@ -481,10 +1183,22 @@
     "Light" : {
       "comment" : "Menu option to set the UI appearance to light mode",
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "ساهم"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "needs_review",
             "value" : "Licht"
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "φωτεινό"
           }
         },
         "es" : {
@@ -493,10 +1207,28 @@
             "value" : "Luces"
           }
         },
+        "es_419" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Luz"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "needs_review",
             "value" : "Clair"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "उजाला"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Cahaya"
           }
         },
         "it" : {
@@ -523,10 +1255,58 @@
             "value" : "Leve"
           }
         },
+        "pt_PT" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Claro"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Светлая"
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "เส้นหลัก"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Aydınlık"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Світло"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Sáng"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "needs_review",
             "value" : "光的"
+          }
+        },
+        "zh_CN" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "浅色"
+          }
+        },
+        "zh_TW" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "明亮"
           }
         }
       }
@@ -534,10 +1314,22 @@
     "New Note" : {
       "comment" : "Default title for a new note that has been created but the title has not yet been specified",
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "سابق الملاحظة"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "needs_review",
             "value" : "Neue Notiz"
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Νέα Σημείωση"
           }
         },
         "es" : {
@@ -546,10 +1338,28 @@
             "value" : "Nota nueva"
           }
         },
+        "es_419" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Nueva nota"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "needs_review",
             "value" : "Note neuve"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "नया नोट"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Catatan Baru"
           }
         },
         "it" : {
@@ -576,10 +1386,58 @@
             "value" : "Nova Nota"
           }
         },
+        "pt_PT" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Nova Nota"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Новая заметка"
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "บันทึกใหม่"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Yeni Not"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Нова замітка"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Ghi chú mới"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "needs_review",
             "value" : "新备忘录"
+          }
+        },
+        "zh_CN" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "新的笔记"
+          }
+        },
+        "zh_TW" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "新筆記"
           }
         }
       }
@@ -587,10 +1445,22 @@
     "Notes" : {
       "comment" : "Navigation title for the list of all the current notes",
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "ملاحظات"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "needs_review",
             "value" : "Notizen"
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Σημειώσεις"
           }
         },
         "es" : {
@@ -599,10 +1469,28 @@
             "value" : "Anotaciones"
           }
         },
+        "es_419" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Notas"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "needs_review",
             "value" : "Billets"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "बिंदु"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Catatan"
           }
         },
         "it" : {
@@ -629,10 +1517,58 @@
             "value" : "Anotações"
           }
         },
+        "pt_PT" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Anotações"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Заметки"
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "หมายเหตุ"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Notlar"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Записки"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Ghi chú"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "needs_review",
             "value" : "笔记"
+          }
+        },
+        "zh_CN" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "%E6%8F%90%E5%AF%B9"
+          }
+        },
+        "zh_TW" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "項目"
           }
         }
       }
@@ -640,10 +1576,22 @@
     "Powered by [Skip](https://skip.tools)" : {
       "comment" : "Settings form title for the description of the technology used to build the app",
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "مدعوم بواسطة [تخطى](https://skip.tools)"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "needs_review",
             "value" : "Unterstützt von [Skip](https://skip.tools)"
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Διενεργούμενη από [Skip](https://skip.tools)"
           }
         },
         "es" : {
@@ -652,10 +1600,28 @@
             "value" : "Agradecimientos a [Skip](https://skip.tools)"
           }
         },
+        "es_419" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Potenciado por [Saltar](https://skip.tools)"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "needs_review",
             "value" : "Alimenté par [Skip](https://skip.tools)"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "स्किपद्वारा समर्थित"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Dikembangkan oleh [Skip](https://skip.tools)"
           }
         },
         "it" : {
@@ -682,10 +1648,58 @@
             "value" : "Powered by [Skip](https://skip.tools)"
           }
         },
+        "pt_PT" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "[Com a ajuda de Skip](https://skip.tools)"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Обработано: [Пропустить](https://skip.tools)"
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "ใช้กำลังด้านโดย [ข้าม](https://skip.tools)"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Sürüldü [Atlamak](https://skip.tools)"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Розроблено [Skip](https://skip.tools)"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Được cung cấp bởi [Bỏ qua](https://vi-vn.facebook.com)"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "needs_review",
             "value" : "由 Skip 提供支持"
+          }
+        },
+        "zh_CN" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "由 [Skip](https://skip.tools) 提供"
+          }
+        },
+        "zh_TW" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "由[Skip](https://skip.tools)提供技术支持"
           }
         }
       }
@@ -693,13 +1707,31 @@
     "Save" : {
       "comment" : "Button for saving the contents of the note",
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "حفظ"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "needs_review",
             "value" : "Speichern"
           }
         },
+        "el" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Αποθηκεύστε"
+          }
+        },
         "es" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Guardar"
+          }
+        },
+        "es_419" : {
           "stringUnit" : {
             "state" : "needs_review",
             "value" : "Guardar"
@@ -709,6 +1741,18 @@
           "stringUnit" : {
             "state" : "needs_review",
             "value" : "Enregistrer"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "सहेजें"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Simpan"
           }
         },
         "it" : {
@@ -735,7 +1779,55 @@
             "value" : "Salvar"
           }
         },
+        "pt_PT" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Salvar"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Сохранить"
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "บันทึก"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Kaydet"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Зберегти"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Lưu"
+          }
+        },
         "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "保存"
+          }
+        },
+        "zh_CN" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "保存"
+          }
+        },
+        "zh_TW" : {
           "stringUnit" : {
             "state" : "needs_review",
             "value" : "保存"
@@ -746,13 +1838,31 @@
     "Settings" : {
       "comment" : "Tab item for bringing up the settings interface",
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "الإعدادت"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "needs_review",
             "value" : "Einstellungen"
           }
         },
+        "el" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Ρυθμίσεις"
+          }
+        },
         "es" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Ajustes"
+          }
+        },
+        "es_419" : {
           "stringUnit" : {
             "state" : "needs_review",
             "value" : "Ajustes"
@@ -762,6 +1872,18 @@
           "stringUnit" : {
             "state" : "needs_review",
             "value" : "Paramètres"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "सेटिंग्स"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Pengaturan"
           }
         },
         "it" : {
@@ -788,10 +1910,58 @@
             "value" : "Configurações"
           }
         },
+        "pt_PT" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Definições"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Настройки"
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "ตั้งค่า"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Ayarlar"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Налаштування"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Cài đặt"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "needs_review",
             "value" : "设置"
+          }
+        },
+        "zh_CN" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "设置"
+          }
+        },
+        "zh_TW" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "設定"
           }
         }
       }
@@ -799,13 +1969,31 @@
     "System" : {
       "comment" : "Menu option to set the UI appearance to the system default",
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "النظام"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "needs_review",
             "value" : "System"
           }
         },
+        "el" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Σύστημα"
+          }
+        },
         "es" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Sistema"
+          }
+        },
+        "es_419" : {
           "stringUnit" : {
             "state" : "needs_review",
             "value" : "Sistema"
@@ -815,6 +2003,18 @@
           "stringUnit" : {
             "state" : "needs_review",
             "value" : "Système"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "प्रणाली"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "%sistem"
           }
         },
         "it" : {
@@ -841,7 +2041,55 @@
             "value" : "Sistema"
           }
         },
+        "pt_PT" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "%s"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Система"
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "ระบบ"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Sistem"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Система"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Hệ thống"
+          }
+        },
         "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "系统"
+          }
+        },
+        "zh_CN" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "系统"
+          }
+        },
+        "zh_TW" : {
           "stringUnit" : {
             "state" : "needs_review",
             "value" : "系统"
@@ -852,13 +2100,31 @@
     "Title" : {
       "comment" : "Form field for setting the title of a note",
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "عنوان"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "needs_review",
             "value" : "Titel"
           }
         },
+        "el" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Τίτλος"
+          }
+        },
         "es" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Título"
+          }
+        },
+        "es_419" : {
           "stringUnit" : {
             "state" : "needs_review",
             "value" : "Título"
@@ -868,6 +2134,18 @@
           "stringUnit" : {
             "state" : "needs_review",
             "value" : "Titre"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "नाम"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Judul"
           }
         },
         "it" : {
@@ -894,10 +2172,58 @@
             "value" : "Título"
           }
         },
+        "pt_PT" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Título"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Название"
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "ชื่อเรื่อง"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Başlık"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Заголовок"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Tiêu đề"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "needs_review",
             "value" : "标题"
+          }
+        },
+        "zh_CN" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "标题"
+          }
+        },
+        "zh_TW" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "標題"
           }
         }
       }
@@ -905,10 +2231,22 @@
     "Version %@ (%@)" : {
       "comment" : "Settings title for the current version of the app",
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "%1$@ (%2$@)"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "needs_review",
             "value" : "Version %1$@ (%2$@)"
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Έκδοση %1$@ (%2$@)"
           }
         },
         "en" : {
@@ -923,10 +2261,28 @@
             "value" : "Versión %1$@ (%2$@)"
           }
         },
+        "es_419" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Versión %1$@ (%2$@)"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "needs_review",
             "value" : "Numéro de version %1$@ (%2$@)"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "संस्करण %1$@ (%2$@)"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Versi %1$@ (%2$@)"
           }
         },
         "it" : {
@@ -953,10 +2309,58 @@
             "value" : "Versão %1$@ (%2$@)"
           }
         },
+        "pt_PT" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Versão %1$@ (%2$@)"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Версия %1$@ (%2$@)"
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "เวอร์ชัน%1$@(%2$@)"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Versiyon %1$@ (%2$@)"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Версія %1$@ (%2$@)"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Phiên bản %1$@ (%2$@)"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "needs_review",
             "value" : "版本 %1$@ （%2$@）"
+          }
+        },
+        "zh_CN" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "版本号: %1$@ (%2$@)"
+          }
+        },
+        "zh_TW" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "版本 %1$@ (%2$@)"
           }
         }
       }

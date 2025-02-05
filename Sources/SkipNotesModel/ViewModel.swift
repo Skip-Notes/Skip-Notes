@@ -38,6 +38,7 @@ fileprivate let logger: Logger = Logger(subsystem: "SkipNotesModel", category: "
                 Task { // @MainActor in
                     self.dbkey = newKey
                     self.crypting = false
+
                 }
             }
         }
