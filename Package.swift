@@ -15,8 +15,8 @@ let package = Package(
         .library(name: "SkipNotesModel", type: .dynamic, targets: ["SkipNotesModel"]),
     ],
     dependencies: [
-        .package(url: "https://source.skip.tools/skip.git", from: "1.2.25"),
-        .package(url: "https://source.skip.tools/skip-ui.git", from: "1.23.1"),
+        .package(url: "https://source.skip.tools/skip.git", from: "1.2.27"),
+        .package(url: "https://source.skip.tools/skip-ui.git", from: "1.25.2"),
         .package(url: "https://source.skip.tools/skip-foundation.git", from: "1.2.13"),
         .package(url: "https://source.skip.tools/skip-fuse.git", "0.0.0"..<"2.0.0"),
         .package(url: "https://source.skip.tools/skip-keychain.git", "0.0.0"..<"2.0.0"),
