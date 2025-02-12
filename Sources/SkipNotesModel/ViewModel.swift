@@ -1,4 +1,8 @@
+#if canImport(FoundationEssentials)
+import FoundationEssentials
+#else
 import Foundation
+#endif
 import Observation
 import SkipFuse
 import SkipKeychain
@@ -35,10 +39,9 @@ fileprivate let logger: Logger = Logger(subsystem: "SkipNotesModel", category: "
                 } catch {
                     logger.error("error setting encryption: \(error)")
                 }
-                Task { // @MainActor in
+                Task { @MainActor in
                     self.dbkey = newKey
                     self.crypting = false
-
                 }
             }
         }
