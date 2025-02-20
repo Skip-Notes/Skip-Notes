@@ -112,12 +112,6 @@
             "value" : "%lld ghi chú"
           }
         },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "%lld 笔记"
-          }
-        },
         "zh_CN" : {
           "stringUnit" : {
             "state" : "needs_review",
@@ -128,6 +122,12 @@
           "stringUnit" : {
             "state" : "needs_review",
             "value" : "%lld 筆註記"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "%lld 笔记"
           }
         }
       }
@@ -243,12 +243,6 @@
             "value" : "Thêm"
           }
         },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "新增"
-          }
-        },
         "zh_CN" : {
           "stringUnit" : {
             "state" : "needs_review",
@@ -256,6 +250,12 @@
           }
         },
         "zh_TW" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "新增"
+          }
+        },
+        "zh-Hans" : {
           "stringUnit" : {
             "state" : "needs_review",
             "value" : "新增"
@@ -374,12 +374,6 @@
             "value" : "Appearance"
           }
         },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "外观"
-          }
-        },
         "zh_CN" : {
           "stringUnit" : {
             "state" : "needs_review",
@@ -390,6 +384,12 @@
           "stringUnit" : {
             "state" : "needs_review",
             "value" : "外觀"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "外观"
           }
         }
       }
@@ -505,12 +505,6 @@
             "value" : "Hủy bỏ"
           }
         },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "取消"
-          }
-        },
         "zh_CN" : {
           "stringUnit" : {
             "state" : "needs_review",
@@ -518,6 +512,12 @@
           }
         },
         "zh_TW" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "取消"
+          }
+        },
+        "zh-Hans" : {
           "stringUnit" : {
             "state" : "needs_review",
             "value" : "取消"
@@ -636,12 +636,6 @@
             "value" : "Tối"
           }
         },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "暗色"
-          }
-        },
         "zh_CN" : {
           "stringUnit" : {
             "state" : "needs_review",
@@ -652,6 +646,12 @@
           "stringUnit" : {
             "state" : "needs_review",
             "value" : "黑暗"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "暗色"
           }
         }
       }
@@ -767,12 +767,6 @@
             "value" : "Ngày"
           }
         },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "日期"
-          }
-        },
         "zh_CN" : {
           "stringUnit" : {
             "state" : "needs_review",
@@ -780,6 +774,12 @@
           }
         },
         "zh_TW" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "日期"
+          }
+        },
+        "zh-Hans" : {
           "stringUnit" : {
             "state" : "needs_review",
             "value" : "日期"
@@ -898,12 +898,6 @@
             "value" : "Hoàn tất"
           }
         },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "完成"
-          }
-        },
         "zh_CN" : {
           "stringUnit" : {
             "state" : "needs_review",
@@ -911,6 +905,12 @@
           }
         },
         "zh_TW" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "完成"
+          }
+        },
+        "zh-Hans" : {
           "stringUnit" : {
             "state" : "needs_review",
             "value" : "完成"
@@ -1029,12 +1029,6 @@
             "value" : "Mã hóa"
           }
         },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "加密"
-          }
-        },
         "zh_CN" : {
           "stringUnit" : {
             "state" : "needs_review",
@@ -1042,6 +1036,12 @@
           }
         },
         "zh_TW" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "加密"
+          }
+        },
+        "zh-Hans" : {
           "stringUnit" : {
             "state" : "needs_review",
             "value" : "加密"
@@ -1160,12 +1160,6 @@
             "value" : "Ưa thích"
           }
         },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "我最喜欢的"
-          }
-        },
         "zh_CN" : {
           "stringUnit" : {
             "state" : "needs_review",
@@ -1176,6 +1170,12 @@
           "stringUnit" : {
             "state" : "needs_review",
             "value" : "關注"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "我最喜欢的"
           }
         }
       }
@@ -1291,12 +1291,6 @@
             "value" : "Sáng"
           }
         },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "光的"
-          }
-        },
         "zh_CN" : {
           "stringUnit" : {
             "state" : "needs_review",
@@ -1307,6 +1301,12 @@
           "stringUnit" : {
             "state" : "needs_review",
             "value" : "明亮"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "光的"
           }
         }
       }
@@ -1422,12 +1422,6 @@
             "value" : "Ghi chú mới"
           }
         },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "新备忘录"
-          }
-        },
         "zh_CN" : {
           "stringUnit" : {
             "state" : "needs_review",
@@ -1438,6 +1432,12 @@
           "stringUnit" : {
             "state" : "needs_review",
             "value" : "新筆記"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "新备忘录"
           }
         }
       }
@@ -1553,12 +1553,6 @@
             "value" : "Ghi chú"
           }
         },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "笔记"
-          }
-        },
         "zh_CN" : {
           "stringUnit" : {
             "state" : "needs_review",
@@ -1569,6 +1563,12 @@
           "stringUnit" : {
             "state" : "needs_review",
             "value" : "項目"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "笔记"
           }
         }
       }
@@ -1684,12 +1684,6 @@
             "value" : "Được cung cấp bởi [Bỏ qua](https://vi-vn.facebook.com)"
           }
         },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "由 Skip 提供支持"
-          }
-        },
         "zh_CN" : {
           "stringUnit" : {
             "state" : "needs_review",
@@ -1700,6 +1694,12 @@
           "stringUnit" : {
             "state" : "needs_review",
             "value" : "由[Skip](https://skip.tools)提供技术支持"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "由 Skip 提供支持"
           }
         }
       }
@@ -1815,12 +1815,6 @@
             "value" : "Lưu"
           }
         },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "保存"
-          }
-        },
         "zh_CN" : {
           "stringUnit" : {
             "state" : "needs_review",
@@ -1828,6 +1822,12 @@
           }
         },
         "zh_TW" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "保存"
+          }
+        },
+        "zh-Hans" : {
           "stringUnit" : {
             "state" : "needs_review",
             "value" : "保存"
@@ -1946,12 +1946,6 @@
             "value" : "Cài đặt"
           }
         },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "设置"
-          }
-        },
         "zh_CN" : {
           "stringUnit" : {
             "state" : "needs_review",
@@ -1962,6 +1956,12 @@
           "stringUnit" : {
             "state" : "needs_review",
             "value" : "設定"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "设置"
           }
         }
       }
@@ -2077,12 +2077,6 @@
             "value" : "Hệ thống"
           }
         },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "系统"
-          }
-        },
         "zh_CN" : {
           "stringUnit" : {
             "state" : "needs_review",
@@ -2090,6 +2084,12 @@
           }
         },
         "zh_TW" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "系统"
+          }
+        },
+        "zh-Hans" : {
           "stringUnit" : {
             "state" : "needs_review",
             "value" : "系统"
@@ -2208,12 +2208,6 @@
             "value" : "Tiêu đề"
           }
         },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "标题"
-          }
-        },
         "zh_CN" : {
           "stringUnit" : {
             "state" : "needs_review",
@@ -2225,8 +2219,17 @@
             "state" : "needs_review",
             "value" : "標題"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "标题"
+          }
         }
       }
+    },
+    "Use Location" : {
+
     },
     "Version %@ (%@)" : {
       "comment" : "Settings title for the current version of the app",
@@ -2345,12 +2348,6 @@
             "value" : "Phiên bản %1$@ (%2$@)"
           }
         },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "版本 %1$@ （%2$@）"
-          }
-        },
         "zh_CN" : {
           "stringUnit" : {
             "state" : "needs_review",
@@ -2361,6 +2358,12 @@
           "stringUnit" : {
             "state" : "needs_review",
             "value" : "版本 %1$@ (%2$@)"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "版本 %1$@ （%2$@）"
           }
         }
       }

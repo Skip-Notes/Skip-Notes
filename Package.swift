@@ -20,7 +20,10 @@ let package = Package(
         .package(url: "https://source.skip.tools/skip-foundation.git", from: "1.2.13"),
         .package(url: "https://source.skip.tools/skip-fuse.git", "0.0.0"..<"2.0.0"),
         .package(url: "https://source.skip.tools/skip-keychain.git", "0.0.0"..<"2.0.0"),
+        .package(url: "https://source.skip.tools/skip-device.git", "0.0.0"..<"2.0.0"),
+        .package(url: "https://source.skip.tools/skip-bluetooth.git", "0.0.0"..<"2.0.0"),
         .package(url: "https://source.skip.tools/swift-sqlcipher.git", from: "1.2.1"),
+//        .package(url: "https://source.skip.tools/skip-sql.git", "0.0.0"..<"2.0.0"),
     ],
     targets: [
         .target(name: "SkipNotes", dependencies: [
@@ -35,7 +38,10 @@ let package = Package(
             .product(name: "SkipFoundation", package: "skip-foundation"),
             .product(name: "SkipFuse", package: "skip-fuse"),
             .product(name: "SkipKeychain", package: "skip-keychain"),
+            .product(name: "SkipDevice", package: "skip-device"),
+            .product(name: "SkipBluetooth", package: "skip-bluetooth"),
             .product(name: "SQLiteDB", package: "swift-sqlcipher"),
+//            .product(name: "SkipSQLPlus", package: "skip-sql"),
         ], resources: [.process("Resources")], plugins: [.plugin(name: "skipstone", package: "skip")]),
         .testTarget(name: "SkipNotesModelTests", dependencies: [
             "SkipNotesModel",
