@@ -13,8 +13,10 @@ INFOPLIST_FILE = Info.plist
 GENERATE_INFOPLIST_FILE = YES
 
 // The user-visible name of the app (localizable)
-//INFOPLIST_KEY_CFBundleDisplayName = App Name
+INFOPLIST_KEY_CFBundleDisplayName = Skip Notes
 //INFOPLIST_KEY_LSApplicationCategoryType = public.app-category.utilities
+
+INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Skip Notes uses your location to optionally annotate notes with the current location"
 
 // iOS-specific Info.plist property keys
 INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphone*] = YES

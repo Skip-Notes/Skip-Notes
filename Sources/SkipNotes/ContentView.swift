@@ -96,6 +96,13 @@ struct SettingsView : View {
                     }
                 }
                 .disabled(viewModel.crypting)
+                Toggle(isOn: $viewModel.useLocation) {
+                    HStack {
+                        Text("Use Location")
+                    }
+                }
+                Text(viewModel.locationDescription)
+
                 HStack {
                     if let version = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String,
                        let buildNumber = Bundle.main.infoDictionary?["CFBundleVersion"] as? String {

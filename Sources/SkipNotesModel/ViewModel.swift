@@ -1,17 +1,23 @@
-#if canImport(FoundationEssentials)
-import FoundationEssentials
-#else
 import Foundation
-#endif
 import Observation
 import SkipFuse
 import SkipKeychain
 import SQLiteDB
+import SkipDevice
+//import SkipSQL
+//import SkipSQLPlus
 
 fileprivate let logger: Logger = Logger(subsystem: "SkipNotesModel", category: "SkipNotesModel")
 
+#if os(Android)
+let defaults = UserDefaults.bridged
+#else
+let defaults = UserDefaults.standard
+#endif
+
 /// The Observable ViewModel used by the application.
 @Observable public class ViewModel {
+//    let conn = SQLContext(configuration: .plus)
     public static let shared = try! ViewModel(dbPath: URL.applicationSupportDirectory.appendingPathComponent("notesdb.sqlite"))
 
     private static let orderOffset = 100.0
@@ -23,6 +29,9 @@ fileprivate let logger: Logger = Logger(subsystem: "SkipNotesModel", category: "
 
     /// Whether the database is currently being encrypted to decrypted
     public var crypting: Bool = false
+
+    /// Information about the current location
+    public var locationDescription = ""
 
     /// Whether or not this database is encrypted; setting it to true will encrypt the database with a new random key, which will be stored in the Keychain
     public var encrypted: Bool {
@@ -42,6 +51,25 @@ fileprivate let logger: Logger = Logger(subsystem: "SkipNotesModel", category: "
                 Task { @MainActor in
                     self.dbkey = newKey
                     self.crypting = false
+                }
+            }
+        }
+    }
+
+    /// Whether or not this database is encrypted; setting it to true will encrypt the database with a new random key, which will be stored in the Keychain
+    public var useLocation: Bool = defaults.bool(forKey: "useLocation") {
+        didSet {
+            defaults.set(useLocation, forKey: "useLocation")
+            if useLocation == true {
+                Task.detached {
+                    do {
+                        let location = try await self.fetchLocation()
+                        Task { @MainActor in
+                            self.locationDescription = "\(location)"
+                        }
+                    } catch {
+                        self.locationDescription = "Error fetching location: \(error)"
+                    }
                 }
             }
         }
@@ -268,6 +296,13 @@ fileprivate let logger: Logger = Logger(subsystem: "SkipNotesModel", category: "
         // re-set the userVersion, which is not copied by pragma sqlcipher_export
         // “sqlcipher_export does not alter the user_version of the target database. Applications are free to do this themselves.” – https://www.zetetic.net/sqlcipher/sqlcipher-api/#notes-export
         db.userVersion = v
+    }
+}
+
+extension ViewModel {
+    /// Fetches the current location
+    public func fetchLocation() async throws -> Location {
+        try await LocationProvider().fetchCurrentLocation()
     }
 }
 
