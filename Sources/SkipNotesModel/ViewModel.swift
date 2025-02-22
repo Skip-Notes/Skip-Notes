@@ -9,12 +9,6 @@ import SkipDevice
 
 fileprivate let logger: Logger = Logger(subsystem: "SkipNotesModel", category: "SkipNotesModel")
 
-#if os(Android)
-let defaults = UserDefaults.bridged
-#else
-let defaults = UserDefaults.standard
-#endif
-
 /// The Observable ViewModel used by the application.
 @Observable public class ViewModel {
 //    let conn = SQLContext(configuration: .plus)
@@ -57,9 +51,9 @@ let defaults = UserDefaults.standard
     }
 
     /// Whether or not this database is encrypted; setting it to true will encrypt the database with a new random key, which will be stored in the Keychain
-    public var useLocation: Bool = defaults.bool(forKey: "useLocation") {
+    public var useLocation: Bool = UserDefaults.standard.bool(forKey: "useLocation") {
         didSet {
-            defaults.set(useLocation, forKey: "useLocation")
+            UserDefaults.standard.set(useLocation, forKey: "useLocation")
             if useLocation == true {
                 Task.detached {
                     do {
