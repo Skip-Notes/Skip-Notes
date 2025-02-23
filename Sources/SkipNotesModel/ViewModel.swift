@@ -50,13 +50,14 @@ fileprivate let logger: Logger = Logger(subsystem: "SkipNotesModel", category: "
         }
     }
 
-    /// Whether or not this database is encrypted; setting it to true will encrypt the database with a new random key, which will be stored in the Keychain
+    /// Whether to enable location services to annotate notes based on the current location
     public var useLocation: Bool = UserDefaults.standard.bool(forKey: "useLocation") {
         didSet {
             UserDefaults.standard.set(useLocation, forKey: "useLocation")
             if useLocation == true {
                 Task.detached {
                     do {
+                        // TODO: on Android, we need to explicitly request location permission, but this needs SkipKit.PermissionManager which is only imported by the UI layer
                         let location = try await self.fetchLocation()
                         Task { @MainActor in
                             self.locationDescription = "\(location)"
@@ -295,7 +296,7 @@ fileprivate let logger: Logger = Logger(subsystem: "SkipNotesModel", category: "
 
 extension ViewModel {
     /// Fetches the current location
-    public func fetchLocation() async throws -> Location {
+    public func fetchLocation() async throws -> LocationEvent {
         try await LocationProvider().fetchCurrentLocation()
     }
 }

@@ -1,6 +1,7 @@
 import SwiftUI
 import Foundation
 import OSLog
+import SkipKit
 import SkipNotesModel
 
 fileprivate let logger: Logger = Logger(subsystem: "skip.app.notes", category: "SkipNotes")
