@@ -24,6 +24,8 @@ android {
         jniLibs {
             keepDebugSymbols.add("**/*.so")
             pickFirsts.add("**/*.so")
+            // compress .so files
+            useLegacyPackaging = true
         }
     }
 
