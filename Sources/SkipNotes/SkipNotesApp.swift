@@ -1,6 +1,10 @@
 import Foundation
-import OSLog
+import SkipFuse
+#if os(Android)
+import SkipFuseUI
+#else
 import SwiftUI
+#endif
 
 fileprivate let logger: Logger = Logger(subsystem: "skip.app.notes", category: "SkipNotes")
 
@@ -10,6 +14,7 @@ let androidSDK = ProcessInfo.processInfo.environment["android.os.Build.VERSION.S
 /// The shared top-level view for the app, loaded from the platform-specific App delegates below.
 ///
 /// The default implementation merely loads the `ContentView` for the app and logs a message.
+// SKIP @bridge
 public struct RootView : View {
     public init() {
     }
@@ -23,7 +28,7 @@ public struct RootView : View {
     }
 }
 
-#if !SKIP
+#if !os(Android)
 public protocol SkipNotesApp : App {
 }
 

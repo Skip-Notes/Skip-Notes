@@ -19,6 +19,7 @@ let package = Package(
         .package(url: "https://source.skip.tools/skip-ui.git", from: "1.25.2"),
         .package(url: "https://source.skip.tools/skip-foundation.git", from: "1.2.13"),
         .package(url: "https://source.skip.tools/skip-fuse.git", from: "1.0.0"),
+        .package(url: "https://source.skip.tools/skip-fuse-ui.git", "0.0.0"..<"2.0.0"),
         .package(url: "https://source.skip.tools/skip-keychain.git", "0.0.0"..<"2.0.0"),
         .package(url: "https://source.skip.tools/skip-kit.git", "0.0.0"..<"2.0.0"),
         .package(url: "https://source.skip.tools/skip-device.git", "0.0.0"..<"2.0.0"),
@@ -30,7 +31,8 @@ let package = Package(
         .target(name: "SkipNotes", dependencies: [
             "SkipNotesModel",
             .product(name: "SkipKit", package: "skip-kit"),
-            .product(name: "SkipUI", package: "skip-ui")
+            .product(name: "SkipUI", package: "skip-ui"),
+            .product(name: "SkipFuseUI", package: "skip-fuse-ui"),
         ], resources: [.process("Resources")], plugins: [.plugin(name: "skipstone", package: "skip")]),
         .testTarget(name: "SkipNotesTests", dependencies: [
             "SkipNotes",

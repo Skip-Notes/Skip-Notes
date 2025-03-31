@@ -1,8 +1,12 @@
-import SwiftUI
 import Foundation
 import OSLog
 import SkipKit
 import SkipNotesModel
+#if os(Android)
+import SkipFuseUI
+#else
+import SwiftUI
+#endif
 
 fileprivate let logger: Logger = Logger(subsystem: "skip.app.notes", category: "SkipNotes")
 
