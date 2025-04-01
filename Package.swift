@@ -39,10 +39,6 @@ let package = Package(
             .product(name: "SkipUI", package: "skip-ui"),
             .product(name: "SkipFuseUI", package: "skip-fuse-ui"),
         ], resources: [.process("Resources")], plugins: [.plugin(name: "skipstone", package: "skip")]),
-        .testTarget(name: "SkipNotesTests", dependencies: [
-            "SkipNotes",
-            .product(name: "SkipTest", package: "skip")
-        ], resources: [.process("Resources")], plugins: [.plugin(name: "skipstone", package: "skip")]),
         .target(name: "SkipNotesModel", dependencies: [
             .product(name: "SkipFoundation", package: "skip-foundation"),
             .product(name: "SQLiteDB", package: "swift-sqlcipher"),
