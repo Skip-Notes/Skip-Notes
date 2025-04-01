@@ -12,6 +12,7 @@ let package = Package(
     platforms: [.iOS(.v17), .macOS(.v14), .tvOS(.v17), .watchOS(.v10), .macCatalyst(.v17)],
     products: [
         .library(name: "SkipNotesApp", type: .dynamic, targets: ["SkipNotes"]),
+        .library(name: "SkipNotesUI", type: .dynamic, targets: ["SkipNotesUI"]),
         .library(name: "SkipNotesModel", type: .dynamic, targets: ["SkipNotesModel"]),
     ],
     dependencies: [
@@ -29,6 +30,10 @@ let package = Package(
     ],
     targets: [
         .target(name: "SkipNotes", dependencies: [
+            "SkipNotesUI",
+            .product(name: "SkipUI", package: "skip-ui")
+        ], plugins: [.plugin(name: "skipstone", package: "skip")]),
+        .target(name: "SkipNotesUI", dependencies: [
             "SkipNotesModel",
             .product(name: "SkipKit", package: "skip-kit"),
             .product(name: "SkipUI", package: "skip-ui"),

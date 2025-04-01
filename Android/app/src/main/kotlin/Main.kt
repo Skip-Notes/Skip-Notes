@@ -121,7 +121,7 @@ internal fun PresentationRootView(context: ComposeContext) {
     PresentationRoot(defaultColorScheme = colorScheme, context = context) { ctx ->
         val contentContext = ctx.content()
         Box(modifier = ctx.modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
-            RootView().Compose(context = contentContext)
+            SkipNotesRootView().Compose(context = contentContext)
         }
     }
 }

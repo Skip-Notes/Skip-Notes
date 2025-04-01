@@ -1,5 +1,5 @@
 import Foundation
-import OSLog
+import SkipFuse
 import SkipKit
 import SkipNotesModel
 #if os(Android)
@@ -10,11 +10,13 @@ import SwiftUI
 
 fileprivate let logger: Logger = Logger(subsystem: "skip.app.notes", category: "SkipNotes")
 
+// SKIP @bridge
 public struct ContentView: View {
     @State var viewModel = ViewModel.shared
     @State var appearance = ""
     @State var showSettings = false
 
+    // SKIP @bridge
     public init() {
     }
 
@@ -95,8 +97,11 @@ struct SettingsView : View {
                         Text("Encrypt")
                         Spacer()
                         if viewModel.crypting {
+                            // TODO: SkipFuseUI needs a native ProgressView bridge
+                            #if !os(Android)
                             ProgressView()
                                 .progressViewStyle(.circular)
+                            #endif
                         }
                     }
                 }
