@@ -117,7 +117,9 @@ struct SettingsView : View {
                     if let version = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String,
                        let buildNumber = Bundle.main.infoDictionary?["CFBundleVersion"] as? String {
                         Text("Version \(version) (\(buildNumber))")
+                            #if !os(Android) // otherwise crash
                             .foregroundStyle(.gray)
+                            #endif
                     }
                     Text("Powered by [Skip](https://skip.tools)")
                 }
@@ -150,7 +152,10 @@ struct ItemView : View {
                 .textFieldStyle(.roundedBorder)
             Toggle("Favorite", isOn: $item.favorite)
             DatePicker("Date", selection: $item.date)
-            Text("Notes").font(.title3)
+            Text("Notes")
+                #if !os(Android) // otherwise crash
+                .font(.title3)
+                #endif
             TextEditor(text: $item.notes)
                 .focused($focusField, equals: .notes)
                 .border(Color.secondary, width: 1.0)
