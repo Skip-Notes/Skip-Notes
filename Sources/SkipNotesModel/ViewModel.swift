@@ -2,16 +2,13 @@ import Foundation
 import Observation
 import SkipFuse
 import SkipKeychain
-import SQLiteDB
-import SkipDevice
-//import SkipSQL
-//import SkipSQLPlus
+@preconcurrency import SkipDevice
+@preconcurrency import SQLiteDB
 
-fileprivate let logger: Logger = Logger(subsystem: "SkipNotesModel", category: "SkipNotesModel")
+let logger: Logger = Logger(subsystem: "skip.notes", category: "SkipNotesModel")
 
 /// The Observable ViewModel used by the application.
-@Observable public class ViewModel {
-//    let conn = SQLContext(configuration: .plus)
+@Observable public final class ViewModel : @unchecked Sendable {
     public static let shared = try! ViewModel(dbPath: URL.applicationSupportDirectory.appendingPathComponent("notesdb.sqlite"))
 
     private static let orderOffset = 100.0
@@ -50,6 +47,7 @@ fileprivate let logger: Logger = Logger(subsystem: "SkipNotesModel", category: "
         }
     }
 
+    #if false // needs https://github.com/skiptools/skip-bridge/issues/78
     /// Whether to enable location services to annotate notes based on the current location
     public var useLocation: Bool = UserDefaults.standard.bool(forKey: "useLocation") {
         didSet {
@@ -69,6 +67,7 @@ fileprivate let logger: Logger = Logger(subsystem: "SkipNotesModel", category: "
             }
         }
     }
+    #endif
 
     // the current notes filter, which will be bound to a search field in the user interface
     public var filter = "" {
@@ -294,12 +293,14 @@ fileprivate let logger: Logger = Logger(subsystem: "SkipNotesModel", category: "
     }
 }
 
+#if false // needs https://github.com/skiptools/skip-bridge/issues/78
 extension ViewModel {
     /// Fetches the current location
     public func fetchLocation() async throws -> LocationEvent {
         try await LocationProvider().fetchCurrentLocation()
     }
 }
+#endif
 
 /// An individual item held by the ViewModel
 public struct Item : Identifiable, Hashable, Codable {

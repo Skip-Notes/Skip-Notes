@@ -1,20 +1,14 @@
-import SwiftUI
 import Foundation
-import OSLog
+import SkipFuseUI
 import SkipKit
 import SkipNotesModel
 
-fileprivate let logger: Logger = Logger(subsystem: "skip.app.notes", category: "SkipNotes")
-
-public struct ContentView: View {
+struct ContentView: View {
     @State var viewModel = ViewModel.shared
     @State var appearance = ""
     @State var showSettings = false
 
-    public init() {
-    }
-
-    public var body: some View {
+    var body: some View {
         NavigationStack {
             List {
                 ForEach(viewModel.items) { item in
@@ -91,18 +85,23 @@ struct SettingsView : View {
                         Text("Encrypt")
                         Spacer()
                         if viewModel.crypting {
+                            // TODO: SkipFuseUI needs a native ProgressView bridge
+                            #if !os(Android)
                             ProgressView()
                                 .progressViewStyle(.circular)
+                            #endif
                         }
                     }
                 }
                 .disabled(viewModel.crypting)
+                #if false // needs https://github.com/skiptools/skip-bridge/issues/78
                 Toggle(isOn: $viewModel.useLocation) {
                     HStack {
                         Text("Use Location")
                     }
                 }
                 Text(viewModel.locationDescription)
+                #endif
 
                 HStack {
                     if let version = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String,
@@ -141,7 +140,8 @@ struct ItemView : View {
                 .textFieldStyle(.roundedBorder)
             Toggle("Favorite", isOn: $item.favorite)
             DatePicker("Date", selection: $item.date)
-            Text("Notes").font(.title3)
+            Text("Notes")
+                .font(.title3)
             TextEditor(text: $item.notes)
                 .focused($focusField, equals: .notes)
                 .border(Color.secondary, width: 1.0)
