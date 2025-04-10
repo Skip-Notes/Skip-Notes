@@ -1,9 +1,5 @@
-// swift-tools-version: 5.9
-// This is a Skip (https://skip.tools) package,
-// containing a Swift Package Manager project
-// that will use the Skip build plugin to transpile the
-// Swift Package, Sources, and Tests into an
-// Android Gradle Project with Kotlin sources and JUnit tests.
+// swift-tools-version: 6.0
+// This is a Skip (https://skip.tools) package.
 import PackageDescription
 
 let package = Package(
@@ -11,13 +7,12 @@ let package = Package(
     defaultLocalization: "en",
     platforms: [.iOS(.v17), .macOS(.v14), .tvOS(.v17), .watchOS(.v10), .macCatalyst(.v17)],
     products: [
-        .library(name: "SkipNotesApp", type: .dynamic, targets: ["SkipNotes"]),
-        .library(name: "SkipNotesUI", type: .dynamic, targets: ["SkipNotesUI"]),
+        .library(name: "SkipNotes", type: .dynamic, targets: ["SkipNotes"]),
         .library(name: "SkipNotesModel", type: .dynamic, targets: ["SkipNotesModel"]),
     ],
     dependencies: [
         .package(url: "https://source.skip.tools/skip.git", from: "1.2.27"),
-        .package(url: "https://source.skip.tools/skip-ui.git", from: "1.25.2"),
+        //.package(url: "https://source.skip.tools/skip-ui.git", from: "1.25.2"),
         .package(url: "https://source.skip.tools/skip-foundation.git", from: "1.2.13"),
         .package(url: "https://source.skip.tools/skip-fuse.git", from: "1.0.0"),
         .package(url: "https://source.skip.tools/skip-fuse-ui.git", "0.0.0"..<"2.0.0"),
@@ -30,13 +25,8 @@ let package = Package(
     ],
     targets: [
         .target(name: "SkipNotes", dependencies: [
-            "SkipNotesUI",
-            //.product(name: "SkipUI", package: "skip-ui")
-        ], plugins: [.plugin(name: "skipstone", package: "skip")]),
-        .target(name: "SkipNotesUI", dependencies: [
             "SkipNotesModel",
             .product(name: "SkipKit", package: "skip-kit"),
-            //.product(name: "SkipUI", package: "skip-ui"),
             .product(name: "SkipFuseUI", package: "skip-fuse-ui"),
         ], resources: [.process("Resources")], plugins: [.plugin(name: "skipstone", package: "skip")]),
         .target(name: "SkipNotesModel", dependencies: [

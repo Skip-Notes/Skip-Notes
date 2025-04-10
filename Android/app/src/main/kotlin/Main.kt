@@ -76,34 +76,39 @@ open class MainActivity: AppCompatActivity {
         super.onRestoreInstanceState(bundle)
     }
 
-    override fun onRestart() {
-        logger.info("onRestart")
-        super.onRestart()
-    }
-
     override fun onStart() {
-        logger.info("onStart")
         super.onStart()
+        SkipNotesAppDelegate.shared.onStart()
     }
 
     override fun onResume() {
-        logger.info("onResume")
         super.onResume()
+        SkipNotesAppDelegate.shared.onResume()
     }
 
     override fun onPause() {
-        logger.info("onPause")
         super.onPause()
+        SkipNotesAppDelegate.shared.onPause()
     }
 
     override fun onStop() {
-        logger.info("onStop")
         super.onStop()
+        SkipNotesAppDelegate.shared.onStop()
     }
 
     override fun onDestroy() {
-        logger.info("onDestroy")
         super.onDestroy()
+        SkipNotesAppDelegate.shared.onDestroy()
+    }
+
+    override fun onLowMemory() {
+        super.onLowMemory()
+        SkipNotesAppDelegate.shared.onLowMemory()
+    }
+
+    override fun onRestart() {
+        logger.info("onRestart")
+        super.onRestart()
     }
 
     override fun onRequestPermissionsResult(requestCode: Int, permissions: kotlin.Array<String>, grantResults: IntArray) {

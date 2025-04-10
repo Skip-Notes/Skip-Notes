@@ -1,26 +1,14 @@
 import Foundation
-import SkipFuse
+import SkipFuseUI
 import SkipKit
 import SkipNotesModel
-#if os(Android)
-import SkipFuseUI
-#else
-import SwiftUI
-#endif
 
-fileprivate let logger: Logger = Logger(subsystem: "skip.app.notes", category: "SkipNotes")
-
-// SKIP @bridge
-public struct ContentView: View {
+struct ContentView: View {
     @State var viewModel = ViewModel.shared
     @State var appearance = ""
     @State var showSettings = false
 
-    // SKIP @bridge
-    public init() {
-    }
-
-    public var body: some View {
+    var body: some View {
         NavigationStack {
             List {
                 ForEach(viewModel.items) { item in
@@ -106,12 +94,14 @@ struct SettingsView : View {
                     }
                 }
                 .disabled(viewModel.crypting)
+                #if false // needs https://github.com/skiptools/skip-bridge/issues/78
                 Toggle(isOn: $viewModel.useLocation) {
                     HStack {
                         Text("Use Location")
                     }
                 }
                 Text(viewModel.locationDescription)
+                #endif
 
                 HStack {
                     if let version = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String,

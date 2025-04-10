@@ -7,7 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		49631D042D9B61E900FE025A /* SkipNotesApp in Frameworks */ = {isa = PBXBuildFile; productRef = 49631D032D9B61E900FE025A /* SkipNotesApp */; };
+		491D8A0A2DA80B93004638A1 /* SkipNotes in Frameworks */ = {isa = PBXBuildFile; productRef = 491D8A092DA80B93004638A1 /* SkipNotes */; };
+		491D8A0B2DA80B93004638A1 /* SkipNotes in Embed Frameworks */ = {isa = PBXBuildFile; productRef = 491D8A092DA80B93004638A1 /* SkipNotes */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		496BDBEE2B8A7E9C00C09264 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 496BDBED2B8A7E9C00C09264 /* Localizable.xcstrings */; };
 		499CD43B2AC5B799001AE8D8 /* Main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F90C2B2A52156200F06D93 /* Main.swift */; };
 		499CD4402AC5B799001AE8D8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49F90C2F2A52156300F06D93 /* Assets.xcassets */; };
@@ -20,6 +21,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				491D8A0B2DA80B93004638A1 /* SkipNotes in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -30,7 +32,7 @@
 		4900101C2BACEA710000DE33 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		493609562A6B7EAE00C401E2 /* SkipNotes */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = SkipNotes; path = ..; sourceTree = "<group>"; };
 		496BDBEB2B89A47800C09264 /* SkipNotes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SkipNotes.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		496BDBED2B8A7E9C00C09264 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; name = Localizable.xcstrings; path = ../Sources/SkipNotesUI/Resources/Localizable.xcstrings; sourceTree = "<group>"; };
+		496BDBED2B8A7E9C00C09264 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; name = Localizable.xcstrings; path = ../Sources/SkipNotes/Resources/Localizable.xcstrings; sourceTree = "<group>"; };
 		496EB72F2A6AE4DE00C1253A /* Skip.env */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = Skip.env; path = ../Skip.env; sourceTree = "<group>"; };
 		496EB72F2A6AE4DE00C1253B /* SkipNotes.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = SkipNotes.xcconfig; sourceTree = "<group>"; };
 		496EB72F2A6AE4DE00C1253C /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
@@ -45,20 +47,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				49631D042D9B61E900FE025A /* SkipNotesApp in Frameworks */,
+				491D8A0A2DA80B93004638A1 /* SkipNotes in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		49631D022D9B61E900FE025A /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		496BDBEC2B89A47800C09264 /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -85,7 +80,6 @@
 				493609562A6B7EAE00C401E2 /* SkipNotes */,
 				49F90C2A2A52156200F06D93 /* App */,
 				49AB54462B066A7E007B79B2 /* SkipStone */,
-				49631D022D9B61E900FE025A /* Frameworks */,
 				496BDBEC2B89A47800C09264 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -104,9 +98,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		499CD4382AC5B799001AE8D8 /* SkipNotes */ = {
+		499CD4382AC5B799001AE8D8 /* SkipNotes App */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 499CD4412AC5B799001AE8D8 /* Build configuration list for PBXNativeTarget "SkipNotes" */;
+			buildConfigurationList = 499CD4412AC5B799001AE8D8 /* Build configuration list for PBXNativeTarget "SkipNotes App" */;
 			buildPhases = (
 				499CD43A2AC5B799001AE8D8 /* Sources */,
 				499CD43C2AC5B799001AE8D8 /* Frameworks */,
@@ -118,9 +112,9 @@
 			);
 			dependencies = (
 			);
-			name = SkipNotes;
+			name = "SkipNotes App";
 			packageProductDependencies = (
-				49631D032D9B61E900FE025A /* SkipNotesApp */,
+				491D8A092DA80B93004638A1 /* SkipNotes */,
 			);
 			productName = App;
 			productReference = 496BDBEB2B89A47800C09264 /* SkipNotes.app */;
@@ -154,7 +148,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				499CD4382AC5B799001AE8D8 /* SkipNotes */,
+				499CD4382AC5B799001AE8D8 /* SkipNotes App */,
 			);
 		};
 /* End PBXProject section */
@@ -265,7 +259,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		499CD4412AC5B799001AE8D8 /* Build configuration list for PBXNativeTarget "SkipNotes" */ = {
+		499CD4412AC5B799001AE8D8 /* Build configuration list for PBXNativeTarget "SkipNotes App" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				499CD4422AC5B799001AE8D8 /* Debug */,
@@ -286,9 +280,9 @@
 /* End XCConfigurationList section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		49631D032D9B61E900FE025A /* SkipNotesApp */ = {
+		491D8A092DA80B93004638A1 /* SkipNotes */ = {
 			isa = XCSwiftPackageProductDependency;
-			productName = SkipNotesApp;
+			productName = SkipNotes;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
