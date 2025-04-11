@@ -85,23 +85,18 @@ struct SettingsView : View {
                         Text("Encrypt")
                         Spacer()
                         if viewModel.crypting {
-                            // TODO: SkipFuseUI needs a native ProgressView bridge
-                            #if !os(Android)
                             ProgressView()
                                 .progressViewStyle(.circular)
-                            #endif
                         }
                     }
                 }
                 .disabled(viewModel.crypting)
-                #if false // needs https://github.com/skiptools/skip-bridge/issues/78
                 Toggle(isOn: $viewModel.useLocation) {
                     HStack {
                         Text("Use Location")
                     }
                 }
                 Text(viewModel.locationDescription)
-                #endif
 
                 HStack {
                     if let version = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String,
