@@ -25,7 +25,7 @@ android {
             keepDebugSymbols.add("**/*.so")
             pickFirsts.add("**/*.so")
             // compress .so files
-            useLegacyPackaging = false
+            useLegacyPackaging = true
         }
     }
 
