@@ -1,7 +1,7 @@
 name: skipapp-notes
 on:
   push:
-    branches: '*'
+    branches: [ main ]
     tags: "[0-9]+.[0-9]+.[0-9]+"
   schedule:
     - cron: '30 4,17 * * *'

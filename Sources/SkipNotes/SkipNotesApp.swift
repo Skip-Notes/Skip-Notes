@@ -1,6 +1,8 @@
 import Foundation
-import SkipFuse
-import SkipFuseUI
+import SwiftUI
+#if canImport(OSLog)
+import OSLog
+#endif
 
 let logger: Logger = Logger(subsystem: "skip.notes", category: "SkipNotes")
 

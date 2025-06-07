@@ -1,5 +1,5 @@
 import Foundation
-import SkipFuseUI
+import SwiftUI
 import SkipKit
 import SkipNotesModel
 
