@@ -27,7 +27,6 @@ let package = Package(
             "SkipNotesModel",
             .product(name: "SkipKit", package: "skip-kit"),
             .product(name: "SkipFuseUI", package: "skip-fuse-ui"),
-            .product(name: "SwiftUI", package: "skip-fuse-ui", condition: .when(platforms: [.android])),
         ], resources: [.process("Resources")], plugins: [.plugin(name: "skipstone", package: "skip")]),
         .target(name: "SkipNotesModel", dependencies: [
             .product(name: "SkipFoundation", package: "skip-foundation"),
