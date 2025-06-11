@@ -41,7 +41,13 @@ class AppMainDelegate: NSObject, AppMainDelegateBase {
 
     #if canImport(UIKit)
     func application(_ application: UIApplication, willFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
-        AppDelegate.shared.onStart()
+        AppDelegate.shared.onInit()
+        return true
+    }
+
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
+        AppDelegate.shared.onLaunch()
+        application.registerForRemoteNotifications()
         return true
     }
 
@@ -54,7 +60,11 @@ class AppMainDelegate: NSObject, AppMainDelegateBase {
     }
     #elseif canImport(AppKit)
     func applicationWillFinishLaunching(_ notification: Notification) {
-        AppDelegate.shared.onStart()
+        AppDelegate.shared.onInit()
+    }
+
+    func applicationDidFinishLaunching(_ notification: Notification) {
+        AppDelegate.shared.onLaunch()
     }
 
     func applicationWillTerminate(_ application: Notification) {
