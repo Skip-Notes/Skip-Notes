@@ -1,6 +1,9 @@
 import SwiftUI
 import SkipNotes
 
+private typealias AppRootView = SkipNotesRootView
+private typealias AppDelegate = SkipNotesAppDelegate
+
 /// The entry point to the app simply loads the App implementation from SPM module.
 @main struct AppMain: App {
     @AppDelegateAdaptor(AppMainDelegate.self) var appDelegate
@@ -8,7 +11,7 @@ import SkipNotes
 
     var body: some Scene {
         WindowGroup {
-            SkipNotesRootView()
+            AppRootView()
         }
         .onChange(of: scenePhase) { oldPhase, newPhase in
             switch newPhase {
@@ -25,7 +28,6 @@ import SkipNotes
     }
 }
 
-typealias AppDelegate = SkipNotesAppDelegate
 #if canImport(UIKit)
 typealias AppDelegateAdaptor = UIApplicationDelegateAdaptor
 typealias AppMainDelegateBase = UIApplicationDelegate

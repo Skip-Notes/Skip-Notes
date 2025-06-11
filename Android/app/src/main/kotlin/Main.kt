@@ -22,6 +22,9 @@ import androidx.core.app.ActivityCompat
 
 internal val logger: SkipLogger = SkipLogger(subsystem = "skip.notes", category = "SkipNotes")
 
+private typealias AppRootView = SkipNotesRootView
+private typealias AppDelegate = SkipNotesAppDelegate
+
 /// AndroidAppMain is the `android.app.Application` entry point, and must match `application android:name` in the AndroidMainfest.xml file.
 open class AndroidAppMain: Application {
     constructor() {
@@ -31,6 +34,7 @@ open class AndroidAppMain: Application {
         super.onCreate()
         logger.info("starting app")
         ProcessInfo.launch(applicationContext)
+        AppDelegate.shared.onInit()
     }
 
     companion object {
@@ -56,6 +60,10 @@ open class MainActivity: AppCompatActivity {
             }
         }
 
+        // when using Messaging, uncomment to register for message receipt
+        //Messaging.messaging().onActivityCreated(this)
+        AppDelegate.shared.onLaunch()
+
         // Example of requesting permissions on startup.
         // These must match the permissions in the AndroidManifest.xml file.
         //let permissions = listOf(
@@ -68,47 +76,47 @@ open class MainActivity: AppCompatActivity {
         //ActivityCompat.requestPermissions(self, permissions.toTypedArray(), requestTag)
     }
 
+    override fun onStart() {
+        logger.info("onStart")
+        super.onStart()
+    }
+
+    override fun onResume() {
+        super.onResume()
+        AppDelegate.shared.onResume()
+    }
+
+    override fun onPause() {
+        super.onPause()
+        AppDelegate.shared.onPause()
+    }
+
+    override fun onStop() {
+        super.onStop()
+        AppDelegate.shared.onStop()
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        AppDelegate.shared.onDestroy()
+    }
+
+    override fun onLowMemory() {
+        super.onLowMemory()
+        AppDelegate.shared.onLowMemory()
+    }
+
+    override fun onRestart() {
+        logger.info("onRestart")
+        super.onRestart()
+    }
+
     override fun onSaveInstanceState(bundle: android.os.Bundle): Unit = super.onSaveInstanceState(bundle)
 
     override fun onRestoreInstanceState(bundle: android.os.Bundle) {
         // Usually you restore your state in onCreate(). It is possible to restore it in onRestoreInstanceState() as well, but not very common. (onRestoreInstanceState() is called after onStart(), whereas onCreate() is called before onStart().
         logger.info("onRestoreInstanceState")
         super.onRestoreInstanceState(bundle)
-    }
-
-    override fun onStart() {
-        super.onStart()
-        SkipNotesAppDelegate.shared.onStart()
-    }
-
-    override fun onResume() {
-        super.onResume()
-        SkipNotesAppDelegate.shared.onResume()
-    }
-
-    override fun onPause() {
-        super.onPause()
-        SkipNotesAppDelegate.shared.onPause()
-    }
-
-    override fun onStop() {
-        super.onStop()
-        SkipNotesAppDelegate.shared.onStop()
-    }
-
-    override fun onDestroy() {
-        super.onDestroy()
-        SkipNotesAppDelegate.shared.onDestroy()
-    }
-
-    override fun onLowMemory() {
-        super.onLowMemory()
-        SkipNotesAppDelegate.shared.onLowMemory()
-    }
-
-    override fun onRestart() {
-        logger.info("onRestart")
-        super.onRestart()
     }
 
     override fun onRequestPermissionsResult(requestCode: Int, permissions: kotlin.Array<String>, grantResults: IntArray) {
@@ -126,7 +134,7 @@ internal fun PresentationRootView(context: ComposeContext) {
     PresentationRoot(defaultColorScheme = colorScheme, context = context) { ctx ->
         val contentContext = ctx.content()
         Box(modifier = ctx.modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
-            SkipNotesRootView().Compose(context = contentContext)
+            AppRootView().Compose(context = contentContext)
         }
     }
 }

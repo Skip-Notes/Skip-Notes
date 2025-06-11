@@ -1,16 +1,15 @@
 import Foundation
+import SkipFuse
 import SwiftUI
-#if canImport(OSLog)
-import OSLog
-#endif
 
+/// A logger for the HowdySkip module.
 let logger: Logger = Logger(subsystem: "skip.notes", category: "SkipNotes")
 
 /// The shared top-level view for the app, loaded from the platform-specific App delegates below.
 ///
 /// The default implementation merely loads the `ContentView` for the app and logs a message.
-public struct SkipNotesRootView : View {
-    public init() {
+/* SKIP @bridge */public struct SkipNotesRootView : View {
+    /* SKIP @bridge */public init() {
     }
 
     public var body: some View {
@@ -24,34 +23,37 @@ public struct SkipNotesRootView : View {
 /// Global application delegate functions.
 ///
 /// These functions can update a shared observable object to communicate app state changes to interested views.
-/// The sender for each of these functions will be either a `UIApplication` (iOS) or `AppCompatActivity` (Android)
-public final class SkipNotesAppDelegate : Sendable {
-    public static let shared = SkipNotesAppDelegate()
+/* SKIP @bridge */public final class SkipNotesAppDelegate : Sendable {
+    /* SKIP @bridge */public static let shared = SkipNotesAppDelegate()
 
     private init() {
     }
 
-    public func onStart() {
-        logger.debug("onStart")
+    /* SKIP @bridge */public func onInit() {
+        logger.debug("onInit")
     }
 
-    public func onResume() {
+    /* SKIP @bridge */public func onLaunch() {
+        logger.debug("onLaunch")
+    }
+
+    /* SKIP @bridge */public func onResume() {
         logger.debug("onResume")
     }
 
-    public func onPause() {
+    /* SKIP @bridge */public func onPause() {
         logger.debug("onPause")
     }
 
-    public func onStop() {
+    /* SKIP @bridge */public func onStop() {
         logger.debug("onStop")
     }
 
-    public func onDestroy() {
+    /* SKIP @bridge */public func onDestroy() {
         logger.debug("onDestroy")
     }
 
-    public func onLowMemory() {
+    /* SKIP @bridge */public func onLowMemory() {
         logger.debug("onLowMemory")
     }
 }
