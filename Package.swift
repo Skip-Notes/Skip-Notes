@@ -11,14 +11,14 @@ let package = Package(
         .library(name: "SkipNotesModel", type: .dynamic, targets: ["SkipNotesModel"]),
     ],
     dependencies: [
-        .package(url: "https://source.skip.tools/skip.git", from: "1.6.8"),
-        .package(url: "https://source.skip.tools/skip-foundation.git", from: "1.3.6"),
+        .package(url: "https://source.skip.tools/skip.git", from: "1.6.10"),
+        .package(url: "https://source.skip.tools/skip-foundation.git", from: "1.3.9"),
         .package(url: "https://source.skip.tools/skip-fuse.git", from: "1.0.2"),
-        .package(url: "https://source.skip.tools/skip-fuse-ui.git", from: "1.0.0"),
+        .package(url: "https://source.skip.tools/skip-fuse-ui.git", from: "1.7.0"),
         .package(url: "https://source.skip.tools/skip-keychain.git", "0.3.0"..<"2.0.0"),
-        .package(url: "https://source.skip.tools/skip-kit.git", "0.5.1"..<"2.0.0"),
-        .package(url: "https://source.skip.tools/skip-device.git", "0.4.0"..<"2.0.0"),
-        .package(url: "https://source.skip.tools/skip-sql.git", "0.0.0"..<"2.0.0"),
+        .package(url: "https://source.skip.tools/skip-kit.git", "0.5.2"..<"2.0.0"),
+        .package(url: "https://source.skip.tools/skip-device.git", "0.4.2"..<"2.0.0"),
+        .package(url: "https://source.skip.tools/skip-sql.git", "0.11.0"..<"2.0.0"),
     ],
     targets: [
         .target(name: "SkipNotes", dependencies: [

@@ -1,4 +1,4 @@
-name: skipapp-notes
+name: Skip Notes
 on:
   push:
     branches: [ main ]
