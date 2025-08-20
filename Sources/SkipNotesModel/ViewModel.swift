@@ -209,7 +209,12 @@ let logger: Logger = Logger(subsystem: "skip.notes", category: "SkipNotesModel")
 //        self.items = try db.prepare(query).map({ try $0.decode() })
 
 
-        self.items = try db.query(Item.self, where: query, orderBy: [(Item.order, .descending), (Item.date, .descending)]).load()
+        self.items = try db.query(Item.self)
+            .where(query)
+            .orderBy(Item.order, order: .descending)
+            .orderBy(Item.date, order: .descending)
+            .eval()
+            .load()
     }
 
     /// Perform the given operation and reload all the rows afterwards
