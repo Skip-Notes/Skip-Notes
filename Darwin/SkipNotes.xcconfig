@@ -61,5 +61,3 @@ CODE_SIGN_IDENTITY[config=Release] = iPhone Distribution: The App Fair Project I
 CODE_SIGN_STYLE[config=Release] = Manual
 DEVELOPMENT_TEAM[config=Release] = 25KG25YA3R
 PROVISIONING_PROFILE_SPECIFIER[config=Release] = org.appfair.app.SkipNotes
-
-
