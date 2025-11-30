@@ -1,5 +1,5 @@
 import Foundation
-import SkipFuse
+import OSLog
 import SwiftUI
 
 /// A logger for the HowdySkip module.

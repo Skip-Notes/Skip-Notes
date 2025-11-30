@@ -9,6 +9,7 @@
 
 # this is a natively-compiled module
 skip:
-  mode: 'native'
+  mode: 'transpiled'
+  #mode: 'native'
   # only needs to be true for SkipNotesModelTests, since SkipNotesUI is native
-  bridging: true
+  #bridging: true

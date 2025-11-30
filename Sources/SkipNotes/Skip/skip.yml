@@ -1,6 +1,6 @@
 # Configuration file for https://skip.tools project
 skip:
-  mode: 'native'
+  mode: 'transpiled'
 
 build:
   contents:

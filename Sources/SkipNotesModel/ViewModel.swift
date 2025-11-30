@@ -1,6 +1,8 @@
 import Foundation
 import Observation
-import SkipFuse
+import OSLog
+import SkipModel
+import SkipSQL
 import SkipSQLPlus
 import SkipKeychain
 @preconcurrency import SkipDevice
@@ -133,14 +135,14 @@ let logger: Logger = Logger(subsystem: "skip.notes", category: "SkipNotesModel")
     private func initializeSchema() throws {
         logger.info("db.userVersion: \(self.db.userVersion)")
 
-        if db.userVersion == 0 {
+        if db.userVersion == Int64(0) {
             for ddl in Item.table.createTableSQL() {
                 try db.exec(ddl)
             }
-            db.userVersion = 4
+            db.userVersion = Int64(4)
         }
 
-//        if db.userVersion == 0 {
+//        if db.userVersion == Int64(0) {
 //            // create the database for the initial schema version
 //            try db.run(Item.table.create { builder in
 //                builder.column(Item.idColumn, primaryKey: true)
@@ -150,26 +152,26 @@ let logger: Logger = Logger(subsystem: "skip.notes", category: "SkipNotesModel")
 //                builder.column(Item.titleColumn)
 //                builder.column(Item.notesColumn)
 //            })
-//            db.userVersion = 1
+//            db.userVersion = Int64(1)
 //        }
 //
 //        // schema migrations update the userVersion each time they change the DB
-//        if db.userVersion == 1 {
+//        if db.userVersion == Int64(1) {
 //            try db.run(Item.table.createIndex(Item.dateColumn, unique: false))
 //            try db.run(Item.table.createIndex(Item.favoriteColumn, unique: false))
 //            try db.run(Item.table.createIndex(Item.orderColumn, unique: false))
-//            db.userVersion = 2
+//            db.userVersion = Int64(2)
 //        }
 //
 //        // create indices
-//        if db.userVersion == 2 {
+//        if db.userVersion == Int64(2) {
 //            try db.run(Item.table.createIndex(Item.titleColumn, unique: false))
 //            try db.run(Item.table.createIndex(Item.notesColumn, unique: false))
-//            db.userVersion = 3
+//            db.userVersion = Int64(3)
 //        }
 //
 //        // create full-text search index
-//        if db.userVersion == 3 {
+//        if db.userVersion == Int64(3) {
 //            let config = FTS4Config()
 //                .externalContent(Item.table)
 //                .column(Item.titleColumn)
@@ -182,7 +184,7 @@ let logger: Logger = Logger(subsystem: "skip.notes", category: "SkipNotesModel")
 //                try db.run(trigger)
 //            }
 //
-//            db.userVersion = 4
+//            db.userVersion = Int64(4)
 //        }
     }
 
@@ -241,7 +243,7 @@ let logger: Logger = Logger(subsystem: "skip.notes", category: "SkipNotesModel")
 
     public func remove(atOffsets offsets: Array<Int>) {
         reloading {
-            let ids = offsets.map({ SQLValue(items[$0].id.uuidString) })
+            let ids: [SQLRepresentable] = offsets.map({ SQLValue(items[$0].id.uuidString) })
             try db.delete(Item.self, where: SQLPredicate.in(Item.id, ids))
         }
     }
@@ -358,7 +360,7 @@ public struct Item : Identifiable, Hashable, SQLCodable {
         self.id = try UUID(uuidString: Self.id.textValueRequired(in: row)) ?? UUID()
         self.date = try Self.date.dateValueRequired(in: row)
         self.order = try Self.order.realValueRequired(in: row)
-        self.favorite = try Self.favorite.longValueRequired(in: row) != 0 ? true : false
+        self.favorite = try Self.favorite.longValueRequired(in: row) != Int64(0) ? true : false
         self.title = try Self.title.textValueRequired(in: row)
         self.notes = try Self.notes.textValueRequired(in: row)
     }
