@@ -13,8 +13,8 @@ let package = Package(
     dependencies: [
         .package(url: "https://source.skip.tools/skip.git", from: "1.6.13"),
         .package(url: "https://source.skip.tools/skip-foundation.git", from: "1.3.9"),
-        .package(url: "https://source.skip.tools/skip-fuse.git", from: "1.0.2"),
-        .package(url: "https://source.skip.tools/skip-fuse-ui.git", from: "1.8.0"),
+        .package(url: "https://source.skip.tools/skip-model.git", from: "1.0.0"),
+        .package(url: "https://source.skip.tools/skip-ui.git", from: "1.0.0"),
         .package(url: "https://source.skip.tools/skip-keychain.git", "0.3.0"..<"2.0.0"),
         .package(url: "https://source.skip.tools/skip-kit.git", "0.5.2"..<"2.0.0"),
         .package(url: "https://source.skip.tools/skip-device.git", "0.4.2"..<"2.0.0"),
@@ -24,11 +24,11 @@ let package = Package(
         .target(name: "SkipNotes", dependencies: [
             "SkipNotesModel",
             .product(name: "SkipKit", package: "skip-kit"),
-            .product(name: "SkipFuseUI", package: "skip-fuse-ui"),
+            .product(name: "SkipUI", package: "skip-ui"),
         ], resources: [.process("Resources")], plugins: [.plugin(name: "skipstone", package: "skip")]),
         .target(name: "SkipNotesModel", dependencies: [
             .product(name: "SkipFoundation", package: "skip-foundation"),
-            .product(name: "SkipFuse", package: "skip-fuse"),
+            .product(name: "SkipModel", package: "skip-model"),
             .product(name: "SkipKeychain", package: "skip-keychain"),
             .product(name: "SkipDevice", package: "skip-device"),
             .product(name: "SkipSQLPlus", package: "skip-sql"),

@@ -1,7 +1,6 @@
 import XCTest
 import OSLog
 import Foundation
-import SkipBridge
 @testable import SkipNotesModel
 
 let logger: Logger = Logger(subsystem: "SkipNotesModel", category: "Tests")
@@ -10,7 +9,7 @@ let logger: Logger = Logger(subsystem: "SkipNotesModel", category: "Tests")
 final class SkipNotesModelTests: XCTestCase {
     override func setUp() {
         #if SKIP
-        loadPeerLibrary(packageName: "skipapp-notes", moduleName: "SkipNotesModel")
+        //loadPeerLibrary(packageName: "skipapp-notes", moduleName: "SkipNotesModel")
         #endif
     }
 
