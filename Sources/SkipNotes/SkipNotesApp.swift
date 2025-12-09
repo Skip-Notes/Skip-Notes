@@ -8,8 +8,8 @@ let logger: Logger = Logger(subsystem: "skip.notes", category: "SkipNotes")
 /// The shared top-level view for the app, loaded from the platform-specific App delegates below.
 ///
 /// The default implementation merely loads the `ContentView` for the app and logs a message.
-/* SKIP @bridge */public struct SkipNotesRootView : View {
-    /* SKIP @bridge */public init() {
+public struct SkipNotesRootView : View {
+    public init() {
     }
 
     public var body: some View {
@@ -23,37 +23,37 @@ let logger: Logger = Logger(subsystem: "skip.notes", category: "SkipNotes")
 /// Global application delegate functions.
 ///
 /// These functions can update a shared observable object to communicate app state changes to interested views.
-/* SKIP @bridge */public final class SkipNotesAppDelegate : Sendable {
-    /* SKIP @bridge */public static let shared = SkipNotesAppDelegate()
+public final class SkipNotesAppDelegate : Sendable {
+    public static let shared = SkipNotesAppDelegate()
 
     private init() {
     }
 
-    /* SKIP @bridge */public func onInit() {
+    public func onInit() {
         logger.debug("onInit")
     }
 
-    /* SKIP @bridge */public func onLaunch() {
+    public func onLaunch() {
         logger.debug("onLaunch")
     }
 
-    /* SKIP @bridge */public func onResume() {
+    public func onResume() {
         logger.debug("onResume")
     }
 
-    /* SKIP @bridge */public func onPause() {
+    public func onPause() {
         logger.debug("onPause")
     }
 
-    /* SKIP @bridge */public func onStop() {
+    public func onStop() {
         logger.debug("onStop")
     }
 
-    /* SKIP @bridge */public func onDestroy() {
+    public func onDestroy() {
         logger.debug("onDestroy")
     }
 
-    /* SKIP @bridge */public func onLowMemory() {
+    public func onLowMemory() {
         logger.debug("onLowMemory")
     }
 }
