@@ -2,7 +2,7 @@ import Foundation
 import Observation
 import OSLog
 import SkipModel
-import SkipSQL
+import SkipSQLCore
 import SkipSQLPlus
 import SkipKeychain
 @preconcurrency import SkipDevice
