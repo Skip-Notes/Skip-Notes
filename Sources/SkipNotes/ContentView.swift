@@ -2,6 +2,7 @@ import Foundation
 import SwiftUI
 import SkipKit
 import SkipNotesModel
+import AppFairUI
 
 struct ContentView: View {
     @State var viewModel = ViewModel.shared
@@ -73,8 +74,7 @@ struct SettingsView : View {
     @Environment(\.dismiss) var dismiss
 
     var body: some View {
-        NavigationStack {
-            Form {
+        AppFairSettings {
                 Picker("Appearance", selection: $appearance) {
                     Text("System").tag("")
                     Text("Light").tag("light")
@@ -116,7 +116,6 @@ struct SettingsView : View {
                     }
                 }
             }
-        }
     }
 }
 
