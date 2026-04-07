@@ -16,7 +16,7 @@ let package = Package(
         .package(url: "https://source.skip.tools/skip-model.git", from: "1.7.1"),
         .package(url: "https://source.skip.tools/skip-ui.git", from: "1.50.0"),
         .package(url: "https://source.skip.tools/skip-keychain.git", "0.3.2"..<"2.0.0"),
-        .package(url: "https://source.skip.tools/skip-kit.git", "0.6.1"..<"2.0.0"),
+        .package(url: "https://source.skip.tools/skip-kit.git",  from: "1.0.0"),
         .package(url: "https://source.skip.tools/skip-device.git", "0.4.2"..<"2.0.0"),
         .package(url: "https://source.skip.tools/skip-sql.git", "0.14.0"..<"2.0.0"),
         .package(url: "https://github.com/appfair/appfair-app.git", from: "1.0.0"),
