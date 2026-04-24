@@ -1,6 +1,6 @@
 ## User settings
 xcuserdata/
-xcshareddata/
+#xcshareddata/
 
 xcodebuild*.log
 
