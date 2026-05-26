@@ -1,4 +1,4 @@
-// swift-tools-version: 6.0
+// swift-tools-version: 6.1
 // This is a Skip (https://skip.dev) package.
 import PackageDescription
 
@@ -41,3 +41,21 @@ let package = Package(
         ], resources: [.process("Resources")], plugins: [.plugin(name: "skipstone", package: "skip")]),
     ]
 )
+
+if let dependencyRoot = Context.environment["SKIP_DEPENDENCY_ROOT"] {
+    package.dependencies = package.dependencies.map { dep in
+        switch dep.kind {
+        case .sourceControl(_, let location, _):
+            // turn "https://source.skip.tools/skip-foundation.git" into "skip-foundation"
+            guard let baseName = location.split(separator: "/").last?.split(separator: ".").first else {
+                return dep
+            }
+            guard baseName.hasPrefix("skip-") else {
+                return dep
+            }
+            return Package.Dependency.package(path: dependencyRoot + "/" + baseName)
+        default:
+            return dep
+        }
+    }
+}
